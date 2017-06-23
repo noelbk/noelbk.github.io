@@ -1,0 +1,162 @@
+%% -*- compile-command: "latex div3digits && latex div3digits && pdflatex div3digits && o div3digits.pdf" -*-
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+
+\begin{document}
+
+\title{If a number is divisible by 3, then so is the sum of its digits}
+\author{Noel Burton-Krahn \\ {\em noel@burton-krahn.com}}
+\date{Oct 3, 2016}
+\maketitle
+\section{Introduction}
+
+There was a trick we learned in elementary school: if the sum of the
+digits of a number is divisible by 3, then the number itself is
+divisble by 3.
+
+\begin{example}
+  Is 54,321 divisible by 3?  The sum of digits $5 + 4 + 3 + 2 + 1 = 15$,
+  which is divisible by 3, so 54,321 should be divisible by 3
+  according to this rule, and lo, $54,321 = 3 \cdot 18,107$.
+\end{example}
+
+Is that true for all numbers?
+
+\section{Proving it}
+
+We write numbers as strings of decimal digits like so:
+
+\begin{align*}
+  54,321 & = 5 \cdot 10,000 + 4 \cdot 1,000 + 3 \cdot 100 + 2 \cdot 10 + 1 \\
+         & = 5 \cdot 10^4   + 4 \cdot 10^3 + 3 \cdot 10^2 + 2 \cdot 10^1 + 1 \cdot 10^0
+\end{align*}
+
+More precisely, we write an integer $D$ as a string of decimal digits:
+$d_{n-1},{\ldots},d_1,d_0$, which represents the equation:
+
+\begin{align*}
+  D & = d_{n-1} 10^{n-1} + \cdots + d_1 10^1 + d_0 10^0 \\
+    & = \sum_{i=0}^{n-1} d_i 10^i
+\end{align*}
+
+Given that definition of the digits of a number, we can prove the
+theorem.  First, a couple of mini-theorems:
+
+\pagebreak
+
+\begin{lemma} 
+For all integer polynomials, $(x+1)^n = x k_n + 1$ for some integer
+$k_n$.  In other words, $(x+1)^n - 1$ is divisible by $x$.
+\end{lemma}
+
+\begin{proof}
+
+By induction. First the base case where $n=0$: $k_0$ is trivially 0.
+\begin{align*}
+    (x+1)^0 & = 1 \\
+            & = x \cdot 0 + 1
+\end{align*}
+
+Now, the inductive step.  Assuming $n$, prove $n+1$:
+
+\begin{flalign*}
+(x+1)^{n+1} & = (x + 1)(x + 1)^n \\
+           & = (x + 1)(x k_n + 1) && \text{assuming $n$: $(x+1)^n = x k_n + 1$} \\
+           & = x x k_n + x + x k_n + 1 \\
+           & = x(x k_n + k_n + 1) + 1 \\
+           & = x(k_{n+1}) + 1 && \text{where $k_{n+1} = x k_n + k_n + 1$}
+\end{flalign*}
+
+We've proven the $n+1$ case: $(x+1)^{n+1} = x k_{n+1} + 1$, and by
+induction this is be true for all $n \ge 0$.
+\end{proof}
+
+\begin{lemma} 
+if $D = p k + q$, then $D$ is divisible by $p$ if and only if $q$ is divisible by $p$.
+\end{lemma}
+
+\begin{proof}
+Assume $q$ is divisible by $p$.  Then, $q = p j$ for some integer $j$, and 
+
+\begin{align*} 
+D & = p k + q \\
+  & = p k + p j \\
+  & = p (k + j)
+\end{align*} 
+
+thus $D$ is divisible by $p$.
+
+Now, assume $q$ is {\bf not} divisible by $p$.  Then, $q = p j + r$ for some $0 < r < p$, and 
+
+\begin{align*} 
+D & = p k + q \\
+  & = p k + p j + r \\
+  & = p (k + j) + r
+\end{align*} 
+
+and since $0 < r < p$, $D$ is {\bf not} divisible by $p$.
+
+Thus $D = p k + q$ is divisible by $p$ if and only if $q$ is divisible by $p$.
+\end{proof}
+
+Now we can get back to the main theorem.
+
+\pagebreak
+
+\begin{theorem} 
+If an integer $D$ is written as a string of digits
+$d_{n-1},\ldots,d_1,d_0$ where $D = \sum_{i=0}^{n-1} d_i 10^i$, then
+$D$ is divisible by 3 if and only if the sum of its digits $S =
+\sum_{i=0}^{n-1} d_i$ is divisible by 3.
+\end{theorem}
+
+
+\begin{proof}
+
+The proof uses the simple fact that $10 = (9 + 1)$:
+  
+\begin{align*}    
+D & = \sum_{i=0}^{n-1} d_i 10^i \\
+  & = \sum_{i=0}^{n-1} d_i (9+1)^i \\
+  & = \sum_{i=0}^{n-1} d_i (9k_i+1) && \text{by Lemma 1} \\
+  & = 9\sum_{i=0}^{n-1} d_i k_i + \sum_{i=0}^{n-1} d_i \\
+  & = 9k + S && \text{where $S$ is the sum of the digits of $D$}
+\end{align*}
+
+So $D = 9k + S$, and by Lemma 2, $D$ is divisible by 9 if and only if
+the sum of its digits, $S = \sum_{i=0}^{n-1} d_i$ is also divisible by
+9.  That's an interesting result, but we were trying to prove that
+statement for 3.  However, since $9 = 3 \cdot 3$:
+
+\begin{align*}    
+D & = 9k + S \\
+  & = 3 \cdot 3 k + S \\
+  & = 3 j + S
+\end{align*}
+
+Lemma 2 works again to prove that $D$ is divisible by 3 if and only if
+the sum of its digits, $S = \sum_{i=0}^{n-1} d_i$ is also divisible by
+3.
+
+\end{proof}
+
+\section{Epilogue}
+
+This proof used the fact that we write integers in base 10, and $10 =
+(9+1)$, and thus if the sum of a number's digits in base 10 is
+divisible by 9 or 3, then so is the number itself.  This works for
+other bases too.  For example, if the number's digits are in base 8,
+this rule will work for all divisors of $8 - 1 = 7$.  For example,
+$5432_8 = 2842_{10} = 7 \cdot 406_{10}$, and $5+4+3+2 =
+14_{10}\checkmark$
+
+\end{document}

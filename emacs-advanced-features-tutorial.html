@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Noel Burton-Krahn" />
+        <meta name="description" content="The good bits of Emacs, after the online tutorial without too much kool-aid" />
+
+
+    <title>Emacs Advanced Features Tutorial - Noel Burton-Krahn</title>
+
+        <link rel="stylesheet" href="http://burton-krahn.com/theme/css/bootstrap.superhero.min.css" type="text/css"/>
+
+    <link href="http://burton-krahn.com/theme/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://burton-krahn.com/theme/css/pygments/native.css" rel="stylesheet" />
+    
+    <link href="http://burton-krahn.com/theme/css/pelican-twitchy.min.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+        <link href="http://burton-krahn.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Noel Burton-Krahn ATOM Feed" />
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small" class="twitchy-background">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="http://burton-krahn.com" title="Noel Burton-Krahn" class="collapsed">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="http://burton-krahn.com/archives.html" title="Recent Articles" class="collapsed">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </a>
+    </li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fa fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="/static/NoelBurtonKrahnResume.pdf" title="Resume"><i class="fa fa-resume-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/noelbk" title="GitHub"><i class="fa fa-github-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="mailto:noel@burton-krahn.com" title="Email"><i class="fa fa-envelope-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/noel.burtonkrahn" title="Facebook"><i class="fa fa-facebook-square fa-lg padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper" class="twitchy-background">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="http://burton-krahn.com/">
+                            <span class="glyphicon glyphicon-home padding-small"></span>
+                            Noel Burton-Krahn
+                    </a>
+                </li>
+                    <li class="nav-divider"></li>
+                    <li>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-latest">
+                            <span class="glyphicon glyphicon-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                    <li class="panel anti-panel"><ul id="collapse-latest" class="sidebar_submenu collapse in">
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/communicating-with-vegtative-patients.html" title="Communicating with vegtative patients">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Communicating with vegtative patients
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/deep-learning-for-medicine.html" title="Deep Learning for Medicine">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Deep Learning for Medicine
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/battlesnakes.html" title="Battlesnakes">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Battlesnakes
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/if-a-number-is-divisible-by-3-then-so-is-the-sum-of-its-digits.html" title="If a number is divisible by 3, then so is the sum of its digits">
+                                <i class="fa fa-file-text padding-small"></i>
+                                If a number is divisible by 3, then so is the sum of its digits
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a class="hide-overflow" href="http://burton-krahn.com/emacs-advanced-features-tutorial.html" title="Emacs Advanced Features Tutorial">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Emacs Advanced Features Tutorial
+                            </a>
+                        </li>
+                    <li>
+                        <a href="http://burton-krahn.com/archives.html">
+                            <i class="fa fa-arrow-right padding-small"></i>
+                            More
+                        </a>
+                    </li>
+                    </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fa fa-users padding-small"></i>
+                        Contact
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="/static/NoelBurtonKrahnResume.pdf" title="Resume">
+                            <i class="fa fa-resume-square fa-lg padding-small"></i>
+                            Resume
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/noelbk" title="GitHub">
+                            <i class="fa fa-github-square fa-lg padding-small"></i>
+                            GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:noel@burton-krahn.com" title="Email">
+                            <i class="fa fa-envelope-square fa-lg padding-small"></i>
+                            Email
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/noel.burtonkrahn" title="Facebook">
+                            <i class="fa fa-facebook-square fa-lg padding-small"></i>
+                            Facebook
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="http://burton-krahn.com/pages/resume.html">
+                            <i class="fa fa-file-text padding-small"></i>
+                            Resume
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li >
+                        <a href="http://burton-krahn.com/category/humour.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Humour
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://burton-krahn.com/category/math.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Math
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://burton-krahn.com/category/misc.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            misc
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="http://burton-krahn.com/category/programming.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Programming
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                </ul></li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-9">
+                <header class="page-header">
+                    <h1>
+                        <a href="http://burton-krahn.com/emacs-advanced-features-tutorial.html"
+                           rel="bookmark"
+                           title="Permalink to Emacs Advanced Features Tutorial">
+                            Emacs Advanced Features Tutorial
+                        </a>
+                    </h1>
+                    <small>
+<div class="post-info">
+    <div class="publish-info-block">
+        <small>
+            <span class="published">
+                <i class="fa fa-calendar padding-small"></i><time datetime="2015-08-27T00:00:00-07:00"> Thu 27 August 2015</time>
+            </span>
+            <span class="category">
+                <i class="fa fa-folder-open padding-small"></i><a href="http://burton-krahn.com/category/programming.html">Programming</a>
+            </span>
+        </small>
+    </div>
+</div><!-- /.post-info -->                    </small>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="entry-content">
+                    <h2>Emacs Advanced Features Tutorial</h2>
+<h2>Introduction</h2>
+<p>Depending on who you ask, Emacs is either an advanced text editor, a
+lisp-based operating system, or a program cleverly designed to tie
+your fingers into knots.  It's a bit of all of the above.  I encourage
+programmers to give it a try, but there seems to be a mythos around
+Emacs that it's too complicated to learn.  This is an advanced
+tutorial about Emacs.  I'll skip over most of the basics and get into
+more of the really advanced features that make it actually useful.</p>
+<h2>Conventions</h2>
+<p>Emacs is a lisp operating system with an editor bolted on top.  All
+the functions of Emacs are written in Lisp, and there are a lot of
+them.  There are functions for colorizing and indenting programming
+languages, reading email, games, etc.  More on that later.</p>
+<p>Emacs functions are bound to keys.  There are lots of key
+combinations, so be prepared for some finger flexibility conditioning.
+Here's how key bindings are represented in Emacs documentation:</p>
+<div class="highlight"><pre><span></span>&quot;C-&quot;      - Means hold contol, then type a key
+&quot;M-&quot;      - Means type escape, then type a key.
+            Emacs calls this the &quot;meta&quot; key.
+&quot;C-f&quot;     - means hold control, press f, release
+&quot;C-u C-f&quot; - means hold control, press u, release, hold control,
+            press f, release
+&quot;C-u f&quot;   - means hold control, press u, release, type h
+&quot;M-f&quot;     - means press Escape, release, type f
+</pre></div>
+
+
+<p>Emacs has an extensive online help system which I highly recommend to
+you... in a bit.  Reviewing the tutorial now, I can see where the
+mythos about weird key combos came from.  Emacs goes back to Richard
+Stallman's Editor MaCroS in 1976, before keyboards had standard cursor
+movement keys, so the tutorial starts with a long section on cursor
+movement using weird key bindings like "C-f", "C-b", "C-v", etc.
+Ignore all that.  The standard cursor movement keys work.  Feel free
+to take a detour to the tutorial now with:</p>
+<div class="highlight"><pre><span></span>&quot;C-h t&quot; - Emacs tutorial
+</pre></div>
+
+
+<p>... Welcome back!  I'll start with some basic commands first if you
+skipped the tutorial, but you can get back to it any time with "C-h
+t".</p>
+<h2>Before We Begin</h2>
+<ol>
+<li>
+<p>Download this whole repo from github</p>
+<p>git clone <a href="https://github.com/noelbk/emacstut">https://github.com/noelbk/emacstut</a></p>
+<p>cd emacstut</p>
+</li>
+<li>
+<p>Install this .emacs startup file.  I added a couple of simple
+   keybindings.</p>
+<p>cp -i dot-emacs ~/.emacs</p>
+</li>
+<li>
+<p>Reopen this tutorial in Emacs</p>
+<p>emacs README.md</p>
+</li>
+</ol>
+<h2>Basic Commands</h2>
+<p>Safety first:  In case you need to quit emacs (not yet, though!):</p>
+<div class="highlight"><pre><span></span>&quot;C-x C-c&quot; - quit emacs
+</pre></div>
+
+
+<p>and in case you get stuck in a command, or Emacs becomes unresponsive
+because a command's taking too long, you can always break out of the
+current command with:</p>
+<div class="highlight"><pre><span></span>&quot;C-g&quot; - quit current function
+</pre></div>
+
+
+<p>Now on to editing files:</p>
+<div class="highlight"><pre><span></span>&quot;C-x C-f&quot; - open a file in a new buffer
+
+&quot;C-x k&quot; - kill buffer (close file)
+</pre></div>
+
+
+<p>Wait! don't open a new file until you know how to get back here.  Let
+me tell you about buffers first.  Emacs opens files in buffers, and
+displays buffers in windows.  Let's do a quick experiment in Emacs
+(you <em>are</em> reading this file in Emacs, right?) to make sure you know
+how to open a new buffer, display it, and get back.</p>
+<ol>
+<li>
+<p>Type "C-x 4 f hellotut.c" to open hellotut.c in a new window.</p>
+</li>
+<li>
+<p>Notice how the screen is split now with hellotut.c below this
+   tutorial.Also, notice how the cursor is in the hellotut.c window,
+   and the cursor in this window is hollow.</p>
+</li>
+<li>
+<p>Type "C-x o" to move the cursor back to this window.</p>
+</li>
+<li>
+<p>Type "C-x 1" to make this window take up the whole frame.</p>
+</li>
+<li>
+<p>Type "C-x b RET" to switch to viewing hellotut.c again.</p>
+</li>
+<li>
+<p>Congratulations for finding your way back here with another
+   "C-x b RET"!</p>
+</li>
+</ol>
+<p>Eventually you may find you never leave Emacs, just keep opening new
+buffers within it and switching between them.  Goodbye, mouse!</p>
+<h2>Help</h2>
+<p>Did I mention Emacs has a great help system?</p>
+<div class="highlight"><pre><span></span>&quot;C-h ?&quot; - list all help commands
+&quot;C-h t&quot; - Emacs tutorial
+&quot;C-h b&quot; - list all key bindings
+&quot;C-h k&quot; - help for a particular key binding
+&quot;C-h f&quot; - help for a function
+&quot;C-h a&quot; - help apropos - keyword search
+</pre></div>
+
+
+<p>This is one of my favorites to explore all the functions available in Emacs:</p>
+<div class="highlight"><pre><span></span>&quot;C-h f TAB&quot; - list all functions in emacs
+</pre></div>
+
+
+<p>Oh, and you can open man pages in emacs too:</p>
+<div class="highlight"><pre><span></span>&quot;M-x man&quot;
+</pre></div>
+
+
+<p>Emacs has its own manual system called info, which is extensive:</p>
+<div class="highlight"><pre><span></span>&quot;C-h i&quot; - list all functions in emacs
+</pre></div>
+
+
+<h2>Shells</h2>
+<p>You can run interactive shells inside emacs buffers.  That means you
+can cut-and-paste from example code into shells, from shells to your
+log, etc.</p>
+<div class="highlight"><pre><span></span>&quot;M-x shell&quot; - start a new shell in a buffer named *shell*
+&quot;M-x newshell&quot; - start a new shell in a buffer with a new name
+
+&quot;M-!&quot;     - put shell command output in new buffer
+&quot;C-u M-!&quot; - insert shell command output at cursor
+&quot;M-|&quot;     - pipe region through command, output in new buffer
+&quot;C-u M-|&quot; - pipe region through command, output at cursor
+</pre></div>
+
+
+<p>Emacs shells are a little different from regular terminals: Your
+cursor is free to move off the command line, so you can move, select,
+and search in them like any other buffer.</p>
+<div class="highlight"><pre><span></span>&quot;C-x h&quot;, &quot;C-w&quot; - cut all text (clear the buffer)
+&quot;M-&gt;&quot; - end of buffer (last command line)
+&quot;M-p&quot; - previous command (command history)
+&quot;M-r&quot; - regexp search backwards through command history
+</pre></div>
+
+
+<p>Emacs shells also track the current directory, so when you do "C-x f"
+to open a file, it's relative to the shell's current directory.</p>
+<p>Emacs shells are dumb.  They don't do terminal emulation.  If you
+really need terminal capabilities for curses, use</p>
+<div class="highlight"><pre><span></span>&quot;M-x term&quot; - start a shell in terminal mode
+</pre></div>
+
+
+<p>Emacs can open and edit files on remote hosts, and open shells there
+too:</p>
+<div class="highlight"><pre><span></span>&quot;M-x ssh&quot; - start a shell ssh&#39;ed to user@host
+
+&quot;C-x C-f /ssh:USER@HOST:PATH&quot; open a file via ssh to HOST
+
+&quot;C-x C-f /sudo::PATH&quot; open a file with sudo, so you can edit root-writable files with tramp
+</pre></div>
+
+
+<h2>Compilation</h2>
+<p>Compilation buffers work like grep, Emacs runs a command into a buffer then parses the results to iterate over errors:</p>
+<div class="highlight"><pre><span></span>&quot;M-x compile&quot; - run make in a buffer
+&quot;M-x `&quot; - next-error - jump to next error
+</pre></div>
+
+
+<p>Try it now:</p>
+<div class="highlight"><pre><span></span>1. &quot;M-x compile&quot; - oops! you should see an error in hellotut.c
+2. &quot;M-x `&quot; - will open the file hellotut.c at the error
+3. comment out &quot;Intentional error here!&quot;
+4. &quot;M-x compile&quot; - compiled OK
+</pre></div>
+
+
+<h2>Amusements</h2>
+<p>Did I mention emacs is a lisp OS?  Yes, there are games:</p>
+<div class="highlight"><pre><span></span>&quot;M-x life&quot;
+&quot;M-x pong&quot;
+&quot;M-x snake&quot;
+&quot;M-x hanoi&quot;
+&quot;M-x doctor&quot;
+</pre></div>
+
+
+<h2>Buffers, Windows and Frames</h2>
+<div class="highlight"><pre><span></span>&quot;C-x f&quot; - open file in a new buffer
+&quot;C-x 4 f&quot; - open file in buffer, split window
+&quot;C-x k&quot; - kill buffer (close file)
+
+&quot;C-x b&quot; - switch to buffer
+&quot;C-x o&quot; - move cursor to other window
+&quot;C-x 1&quot; - make current buffer fill window
+
+&quot;C-x C-b&quot; - list all buffers
+
+&quot;C-x 4 b&quot; - switch to buffer, split window vertically
+&quot;C-x 3 b&quot; - switch to buffer, split window horizontally
+&quot;C-x 5 b&quot; - switch to buffer in new frame
+</pre></div>
+
+
+<h2>Selecting text</h2>
+<p>Cutting, copying, and pasting</p>
+<div class="highlight"><pre><span></span>&quot;C-SPC&quot; - Set the mark.  That&#39;s used for selecting a range of text
+          between the mark and the cursor
+
+&quot;C-x h&quot; - select the whole buffer.
+
+&quot;C-w&quot; - cut text between cursor and mark.  Sorry, Emacs was
+        invented before Macintosh, so it bound the now common C-x
+        and C-v to other functions.
+
+&quot;M-w&quot; - copy text between point and mark
+
+&quot;C-y&quot; - paste text
+
+&quot;C-x r k&quot; - cut a rectangle of text between cursor and mark
+&quot;C-x r y&quot; - paste a rectangle of text
+</pre></div>
+
+
+<h2>Searching</h2>
+<p>The i in isearch is for incremental.  Emacs will search and highlight
+matches as you type.  Type "C-r" to search backwards.</p>
+<div class="highlight"><pre><span></span>&quot;C-s&quot; - isearch
+&quot;C-s C-r&quot; - isearch backwards
+&quot;M-C-s&quot; - regexp isearch
+</pre></div>
+
+
+<p>Query-replace prompts for each replacement:</p>
+<div class="highlight"><pre><span></span>&quot;C-r&quot; - query replace regexp
+</pre></div>
+
+
+<p>Even better, you can run grep into a buffer, then step through the
+results, jumping to matches:</p>
+<div class="highlight"><pre><span></span>&quot;M-x grep&quot; - run grep over files in the current directory
+&quot;M-x grep-find&quot; - run grep recursively into subdirs
+</pre></div>
+
+
+<h2>Modes</h2>
+<p>Each buffer has a mode for the type of file it contains.  The mode
+controls syntax highlighting, indentation rules, and mode-specific
+functions.</p>
+<p>For example, if you open hellotut.c again, you'll be in c++-mode.  Try
+these commands:</p>
+<div class="highlight"><pre><span></span>  &quot;M-\&quot; - indent region
+  &quot;)&quot;, &quot;}&quot;, &quot;]&quot; - blink matching parens
+  &quot;C-h m&quot; - help on current mode
+</pre></div>
+
+
+<h2>What Next?</h2>
+<p>Finger exercises :).  Then, read the tutorial and explore the info
+system with "C-h i".  Also see <a href="http://www.gnu.org/software/emacs/tour/">A Guided Tour of
+Emacs</a></p>
+<p>Questions, comments, and pull requests are welcome!  I'd like to hear
+how Emacs worked out for you.</p>
+<p>Noel Burton-Krahn <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#110;&#111;&#101;&#108;&#64;&#98;&#117;&#114;&#116;&#111;&#110;&#45;&#107;&#114;&#97;&#104;&#110;&#46;&#99;&#111;&#109;">&#110;&#111;&#101;&#108;&#64;&#98;&#117;&#114;&#116;&#111;&#110;&#45;&#107;&#114;&#97;&#104;&#110;&#46;&#99;&#111;&#109;</a>
+  Aug 27, 2015</p>
+                </div>
+                <footer class="text-right">
+                  <p>- Noel Burton-Krahn</p>
+                </footer>
+    <section id="comments" class="comments ">
+        <hr/>
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </section>
+            </div>
+        </div>
+    </article>
+</section>
+<footer>
+    <hr>
+    <div class="row">
+        <div class="col-lg-9 text-center">
+            <p><small>
+                Built by <a href="http://docs.getpelican.com/en/latest">Pelican</a> / <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a>
+                &middot;                    &copy; 2017 Noel Burton-Krahn
+            </small></p>
+        </div>
+    </div>
+</footer>            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.2 -->
+    <script src="http://burton-krahn.com/theme/js/jquery-1.11.2.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://burton-krahn.com/theme/js/bootstrap.min.js"></script>
+    <!-- twitchy Script -->
+    <script src="http://burton-krahn.com/theme/js/pelican_twitchy.min.js"></script>
+
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'noel-burton-krahn'; // required: replace example with your forum shortname
+
+            var disqus_identifier = 'emacs-advanced-features-tutorial';
+        var disqus_url = 'http://burton-krahn.com/emacs-advanced-features-tutorial.html';
+
+    var disqus_config = function () {
+        this.language = "en";
+    };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- /disqus -->
+</body>
+</html>

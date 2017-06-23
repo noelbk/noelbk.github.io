@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Noel Burton-Krahn - Math</title><link href="http://burton-krahn.com/" rel="alternate"></link><link href="http://burton-krahn.com/feeds/math.atom.xml" rel="self"></link><id>http://burton-krahn.com/</id><updated>2016-10-03T00:00:00-07:00</updated><entry><title>If a number is divisible by 3, then so is the sum of its digits</title><link href="http://burton-krahn.com/if-a-number-is-divisible-by-3-then-so-is-the-sum-of-its-digits.html" rel="alternate"></link><published>2016-10-03T00:00:00-07:00</published><updated>2016-10-03T00:00:00-07:00</updated><author><name>Noel Burton-Krahn</name></author><id>tag:burton-krahn.com,2016-10-03:/if-a-number-is-divisible-by-3-then-so-is-the-sum-of-its-digits.html</id><summary type="html">&lt;p&gt;A toy proof of a math trick I learned in elementary school.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Preamble&lt;/h1&gt;
+&lt;p&gt;This is a toy proof of a math trick I learned in elementary school.
+It's really Just an excuse to play with
+&lt;a href="https://www.latex-project.org/"&gt;&lt;span class="math"&gt;\(\LaTeX\)&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This document is also available as
+&lt;a href="http://burton-krahn.com/static/div3digits.pdf"&gt;PDF&lt;/a&gt; and &lt;span class="math"&gt;\(\LaTeX\)&lt;/span&gt;
+&lt;a href="http://burton-krahn.com/static/div3digits.tex"&gt;source&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;There was a trick we learned in elementary school: if the sum of the
+digits of a number is divisible by 3, then the number itself is
+divisble by 3.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Is &lt;span class="math"&gt;\(54,321\)&lt;/span&gt; divisible by &lt;span class="math"&gt;\(3\)&lt;/span&gt;?  The sum of digits &lt;span class="math"&gt;\(5 + 4 + 3
++ 2 + 1 = 15\)&lt;/span&gt;, which is divisible by &lt;span class="math"&gt;\(3\)&lt;/span&gt;, so &lt;span class="math"&gt;\(54,321\)&lt;/span&gt; should be divisible
+by &lt;span class="math"&gt;\(3\)&lt;/span&gt; according to this rule, and yes, &lt;span class="math"&gt;\(54,321 = 3 \cdot 18,107\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Is that true for all numbers?&lt;/p&gt;
+&lt;h1&gt;Proving it&lt;/h1&gt;
+&lt;p&gt;We write numbers as strings of decimal digits like so:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+  54,321 &amp;amp; = 5 \cdot 10,000 + 4 \cdot 1,000 + 3 \cdot 100 + 2 \cdot 10 + 1 \\
+         &amp;amp; = 5 \cdot 10^4   + 4 \cdot 10^3 + 3 \cdot 10^2 + 2 \cdot 10^1 + 1 \cdot 10^0
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;More precisely, we write an integer &lt;span class="math"&gt;\(D\)&lt;/span&gt; as a string of decimal digits:
+&lt;span class="math"&gt;\(d_{n-1},{\ldots},d_1,d_0\)&lt;/span&gt;, which represents the equation:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+  D &amp;amp; = d_{n-1} 10^{n-1} + \cdots + d_1 10^1 + d_0 10^0 \\
+    &amp;amp; = \sum_{i=0}^{n-1} d_i 10^i
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;Given that definition of the digits of a number, we can prove the
+theorem.  First, a couple of mini-theorems:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lemma 1:&lt;/strong&gt; For all integer polynomials, &lt;span class="math"&gt;\((x+1)^n = x k_n + 1\)&lt;/span&gt; for
+some integer &lt;span class="math"&gt;\(k_n\)&lt;/span&gt;.  In other words, &lt;span class="math"&gt;\((x+1)^n - 1\)&lt;/span&gt; is divisible by
+&lt;span class="math"&gt;\(x\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proof:&lt;/strong&gt; By induction. First the base case where &lt;span class="math"&gt;\(n=0\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    (x+1)^0 &amp;amp; = 1 \\
+            &amp;amp; = x \cdot 0 + 1
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;So for the base base, &lt;span class="math"&gt;\(k_0 = 0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Now, the inductive step.  Assuming &lt;span class="math"&gt;\(n\)&lt;/span&gt;, prove &lt;span class="math"&gt;\(n+1\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+(x+1)^{n+1} &amp;amp; = (x + 1)(x + 1)^n \\
+           &amp;amp; = (x + 1)(x k_n + 1) &amp;amp;&amp;amp; \text{assuming $n$: $(x+1)^n = x k_n + 1$} \\
+           &amp;amp; = x x k_n + x + x k_n + 1 \\
+           &amp;amp; = x(x k_n + k_n + 1) + 1 \\
+           &amp;amp; = x(k_{n+1}) + 1 &amp;amp;&amp;amp; \text{where $k_{n+1} = x k_n + k_n + 1$}
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;We've proven the &lt;span class="math"&gt;\(n+1\)&lt;/span&gt; case: &lt;span class="math"&gt;\((x+1)^{n+1} = x k_{n+1} + 1\)&lt;/span&gt;, and by
+induction this is be true for all &lt;span class="math"&gt;\(n \ge 0\)&lt;/span&gt;.
+&lt;span class="math"&gt;\(\square\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lemma 2:&lt;/strong&gt; If &lt;span class="math"&gt;\(D = p k + q\)&lt;/span&gt;, then &lt;span class="math"&gt;\(D\)&lt;/span&gt; is divisible by &lt;span class="math"&gt;\(p\)&lt;/span&gt; if and
+only if &lt;span class="math"&gt;\(q\)&lt;/span&gt; is divisible by &lt;span class="math"&gt;\(p\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proof: &lt;/strong&gt; Assume &lt;span class="math"&gt;\(q\)&lt;/span&gt; is divisible by &lt;span class="math"&gt;\(p\)&lt;/span&gt;.  Then, &lt;span class="math"&gt;\(q = p j\)&lt;/span&gt; for some
+integer &lt;span class="math"&gt;\(j\)&lt;/span&gt;, and&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*} 
+D &amp;amp; = p k + q \\
+  &amp;amp; = p k + p j \\
+  &amp;amp; = p (k + j)
+\end{align*} 
+$$&lt;/div&gt;
+&lt;p&gt;thus &lt;span class="math"&gt;\(D\)&lt;/span&gt; is divisible by &lt;span class="math"&gt;\(p\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Now, assume &lt;span class="math"&gt;\(q\)&lt;/span&gt; is {\bf not} divisible by &lt;span class="math"&gt;\(p\)&lt;/span&gt;.  Then, &lt;span class="math"&gt;\(q = p j + r\)&lt;/span&gt; for some &lt;span class="math"&gt;\(0 &amp;lt; r &amp;lt; p\)&lt;/span&gt;, and &lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*} 
+D &amp;amp; = p k + q \\
+  &amp;amp; = p k + p j + r \\
+  &amp;amp; = p (k + j) + r
+\end{align*} 
+$$&lt;/div&gt;
+&lt;p&gt;and since &lt;span class="math"&gt;\(0 &amp;lt; r &amp;lt; p\)&lt;/span&gt;, &lt;span class="math"&gt;\(D\)&lt;/span&gt; is {\bf not} divisible by &lt;span class="math"&gt;\(p\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Thus &lt;span class="math"&gt;\(D = p k + q\)&lt;/span&gt; is divisible by &lt;span class="math"&gt;\(p\)&lt;/span&gt; if and only if &lt;span class="math"&gt;\(q\)&lt;/span&gt; is divisible by &lt;span class="math"&gt;\(p\)&lt;/span&gt;.
+&lt;span class="math"&gt;\(\square\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Now we can get back to the main theorem.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem:&lt;/strong&gt; If an integer &lt;span class="math"&gt;\(D\)&lt;/span&gt; is written as a string of digits
+&lt;span class="math"&gt;\(d_{n-1},\ldots,d_1,d_0\)&lt;/span&gt; where &lt;span class="math"&gt;\(D = \sum_{i=0}^{n-1} d_i 10^i\)&lt;/span&gt;, then
+&lt;span class="math"&gt;\(D\)&lt;/span&gt; is divisible by 3 if and only if the sum of its digits &lt;span class="math"&gt;\(S =
+\sum_{i=0}^{n-1} d_i\)&lt;/span&gt; is divisible by 3.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proof:&lt;/strong&gt; The proof uses the simple fact that &lt;span class="math"&gt;\(10 = (9 + 1)\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}    
+D &amp;amp; = \sum_{i=0}^{n-1} d_i 10^i \\
+  &amp;amp; = \sum_{i=0}^{n-1} d_i (9+1)^i \\
+  &amp;amp; = \sum_{i=0}^{n-1} d_i (9k_i+1) &amp;amp;&amp;amp; \text{by Lemma 1}\\
+  &amp;amp; = 9\sum_{i=0}^{n-1} d_i k_i + \sum_{i=0}^{n-1} d_i\\
+  &amp;amp; = 9k + S &amp;amp;&amp;amp; \text{where $S$ is the sum of the digits of $D$}
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;So &lt;span class="math"&gt;\(D = 9k + S\)&lt;/span&gt;, and by Lemma 2, &lt;span class="math"&gt;\(D\)&lt;/span&gt; is divisible by 9 if and only if
+the sum of its digits, &lt;span class="math"&gt;\(S = \sum_{i=0}^{n-1} d_i\)&lt;/span&gt; is also divisible by
+9.  That's an interesting result, but we were trying to prove that
+statement for 3.  However, since &lt;span class="math"&gt;\(9 = 3 \cdot 3\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}    
+D &amp;amp; = 9k + S \\
+  &amp;amp; = 3 \cdot 3 k + S \\
+  &amp;amp; = 3 j + S
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;Lemma 2 works again to prove that &lt;span class="math"&gt;\(D\)&lt;/span&gt; is divisible by 3 if and only if
+the sum of its digits, &lt;span class="math"&gt;\(S = \sum_{i=0}^{n-1} d_i\)&lt;/span&gt; is also divisible by
+3.
+&lt;span class="math"&gt;\(\square\)&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Epilogue&lt;/h2&gt;
+&lt;p&gt;This proof used the fact that we write integers in base 10, and &lt;span class="math"&gt;\(10 =
+(9+1)\)&lt;/span&gt;, and thus if the sum of a number's digits in base 10 is
+divisible by 9 or 3, then so is the number itself.  This works for
+other bases too.  For example, if the number's digits are in base 8,
+this rule will work for all divisors of &lt;span class="math"&gt;\(8 - 1 = 7\)&lt;/span&gt;.  For example,
+&lt;span class="math"&gt;\(5432_8 = 2842_{10} = 7 \cdot 406_{10}\)&lt;/span&gt;, and &lt;span class="math"&gt;\(5+4+3+2 =
+14_{10}\checkmark\)&lt;/span&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content></entry></feed>

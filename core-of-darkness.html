@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Donald Chan" />
+        <meta name="description" content="Coopalpyse Now" />
+
+
+    <title>Core of Darkness - Noel Burton-Krahn</title>
+
+        <link rel="stylesheet" href="http://burton-krahn.com/theme/css/bootstrap.superhero.min.css" type="text/css"/>
+
+    <link href="http://burton-krahn.com/theme/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://burton-krahn.com/theme/css/pygments/native.css" rel="stylesheet" />
+    
+    <link href="http://burton-krahn.com/theme/css/pelican-twitchy.min.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+        <link href="http://burton-krahn.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Noel Burton-Krahn ATOM Feed" />
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small" class="twitchy-background">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="http://burton-krahn.com" title="Noel Burton-Krahn" class="collapsed">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="http://burton-krahn.com/archives.html" title="Recent Articles" class="collapsed">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </a>
+    </li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fa fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="/static/NoelBurtonKrahnResume.pdf" title="Resume"><i class="fa fa-resume-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/noelbk" title="GitHub"><i class="fa fa-github-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="mailto:noel@burton-krahn.com" title="Email"><i class="fa fa-envelope-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/noel.burtonkrahn" title="Facebook"><i class="fa fa-facebook-square fa-lg padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper" class="twitchy-background">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="http://burton-krahn.com/">
+                            <span class="glyphicon glyphicon-home padding-small"></span>
+                            Noel Burton-Krahn
+                    </a>
+                </li>
+                    <li class="nav-divider"></li>
+                    <li>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-latest">
+                            <span class="glyphicon glyphicon-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                    <li class="panel anti-panel"><ul id="collapse-latest" class="sidebar_submenu collapse in">
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/communicating-with-vegtative-patients.html" title="Communicating with vegtative patients">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Communicating with vegtative patients
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/deep-learning-for-medicine.html" title="Deep Learning for Medicine">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Deep Learning for Medicine
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/battlesnakes.html" title="Battlesnakes">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Battlesnakes
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/if-a-number-is-divisible-by-3-then-so-is-the-sum-of-its-digits.html" title="If a number is divisible by 3, then so is the sum of its digits">
+                                <i class="fa fa-file-text padding-small"></i>
+                                If a number is divisible by 3, then so is the sum of its digits
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/emacs-advanced-features-tutorial.html" title="Emacs Advanced Features Tutorial">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Emacs Advanced Features Tutorial
+                            </a>
+                        </li>
+                    <li>
+                        <a href="http://burton-krahn.com/archives.html">
+                            <i class="fa fa-arrow-right padding-small"></i>
+                            More
+                        </a>
+                    </li>
+                    </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fa fa-users padding-small"></i>
+                        Contact
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="/static/NoelBurtonKrahnResume.pdf" title="Resume">
+                            <i class="fa fa-resume-square fa-lg padding-small"></i>
+                            Resume
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/noelbk" title="GitHub">
+                            <i class="fa fa-github-square fa-lg padding-small"></i>
+                            GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:noel@burton-krahn.com" title="Email">
+                            <i class="fa fa-envelope-square fa-lg padding-small"></i>
+                            Email
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/noel.burtonkrahn" title="Facebook">
+                            <i class="fa fa-facebook-square fa-lg padding-small"></i>
+                            Facebook
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="http://burton-krahn.com/pages/resume.html">
+                            <i class="fa fa-file-text padding-small"></i>
+                            Resume
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li class="active">
+                        <a href="http://burton-krahn.com/category/humour.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Humour
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://burton-krahn.com/category/math.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Math
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://burton-krahn.com/category/misc.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            misc
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://burton-krahn.com/category/programming.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Programming
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                </ul></li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-9">
+                <header class="page-header">
+                    <h1>
+                        <a href="http://burton-krahn.com/core-of-darkness.html"
+                           rel="bookmark"
+                           title="Permalink to Core of Darkness">
+                            Core of Darkness
+                        </a>
+                    </h1>
+                    <small>
+<div class="post-info">
+    <div class="publish-info-block">
+        <small>
+            <span class="published">
+                <i class="fa fa-calendar padding-small"></i><time datetime="2006-08-11T00:00:00-07:00"> Fri 11 August 2006</time>
+            </span>
+            <span class="category">
+                <i class="fa fa-folder-open padding-small"></i><a href="http://burton-krahn.com/category/humour.html">Humour</a>
+            </span>
+        </small>
+    </div>
+</div><!-- /.post-info -->                    </small>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="entry-content">
+                    <p>A young Co-op is sent down I-5 to "downsize" Don Knuth because his
+methods are unsound. The co-op student is well trained in .Net, XML,
+and Design Patterns, and he's sent to off Knuth for his heretical
+non-standards-base approach (and specifically, the MMIX-fallacy based
+on --gasp-- assembly language!).</p>
+<p>UVic, shit.  Eight years into my degree, and I'm still trying to get
+through calculus.  My girlfriend graduated last year and left me for a
+commerce major.  Every semester I spend on this campus I get weaker.
+I just wanted one co-op term that wasn't testing or writing
+documentation.</p>
+<p>At his briefing, the co-op student is handed a listing of an APL
+program by the chief architect of the .NET CLR, while the Spec Lead of
+the Java Community Process group looks on. An unnamed representative
+from W3C is sitting in the background.</p>
+<p>Q: "Are you familiar with this language, son?"</p>
+<p>A: "No sir"</p>
+<p>(The W3C guy gives the student a significant look)</p>
+<p>Q: "What about Forth?"</p>
+<p>A: "Sir, I have never participated in any projects utilizing these
+languages. Furthermore, if I had in fact participated in any such
+projects, I would not be at liberty to speak of them at this
+time. Sir."</p>
+<p>While the co-op student is being driven down the I-5 in an SUV, he
+reviews Knuth's dossier and ruminates "this guy wrote two volumes of
+The Art of Computer Programming, then gave it all up to implement
+TeX. Back to coding, at his age? What balls. I tried to write a
+validating XML processor when I was 18 and it damn near killed me."</p>
+<p>To get directions to Knuth, Willard is sent to see Bill "Kernel"
+Kiljoy, a former Sun VP, now with Microsoft. Kiljoy is in the process
+of reorganizing a software company recently acquired by Microsoft.
+Willard meets Kiljoy on-site, where half the programming staff has
+been given pink slips and the other half is being indoctrinated in the
+Microsoft development style.  Flunkies scurry everywhere, installing
+hardware and software, while hapless employees look on.</p>
+<p>FLUNKY: The network topology's pretty hairy here, sir. Some of it's
+old 10 megabit coax. There?s even a 4 megabit token ring. I don't know
+where we'll get the bandwidth to set up VoIP.</p>
+<p>KILJOY: We can get rid of some of these Unix workstations for a start.</p>
+<p>Kiljoy yanks an ethernet cable out of the back of a nearby computer.</p>
+<p>HAPLESS EMPLOYEE: Hey, that's Charlie's network connection</p>
+<p>KILJOY: So what? Charlie won't surf!</p>
+<p>A new horde of flunkies arrive and begin to install Windows Vista on
+all the computers in the office. Kiljoy starts up Visual Studio on a
+computer and several minutes later, source code is displayed.</p>
+<p>KILJOY: You see that? Do you see that? Hungarian notation, son. No
+other coding style in the world looks like that. I love to look at C#
+in the morning. You know, one time we migrated some BSD software to
+.NET.  When it was all done I reviewed the code. I didn't understand
+one line, not one stinkin' expression. It was the style, you know that
+verbose COBOL-like style, the whole program. It looked like... like
+the Reverse-injected Victory Pattern. (He casts an avuncular glance at
+Willard and winks). Some day this software's going to ship.</p>
+<p>In the boardroom waiting for Knuth, the VP of Marketing explains
+Knuth's brilliance</p>
+<p>VPM: no mantissa. You can't address memory, you can't index into
+     process space, with, like you know, floating point numbers. What
+     byte do you get with 2.5E-1, 3.75E-1, what are you gonna do when
+     you reach the end of allocated storage or something -- that's
+     array subscripting, OK?</p>
+<p>Never leave the cubicle, absolutely goddamn right, unless you're going
+all the way.  Knuth left the cubicle, he wrote the whole fucking
+program.</p>
+                </div>
+                <footer class="text-right">
+                  <p>- Donald Chan,Noel Burton-Krahn</p>
+                </footer>
+    <section id="comments" class="comments ">
+        <hr/>
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </section>
+            </div>
+        </div>
+    </article>
+</section>
+<footer>
+    <hr>
+    <div class="row">
+        <div class="col-lg-9 text-center">
+            <p><small>
+                Built by <a href="http://docs.getpelican.com/en/latest">Pelican</a> / <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a>
+                &middot;                    &copy; 2017 Noel Burton-Krahn
+            </small></p>
+        </div>
+    </div>
+</footer>            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.2 -->
+    <script src="http://burton-krahn.com/theme/js/jquery-1.11.2.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://burton-krahn.com/theme/js/bootstrap.min.js"></script>
+    <!-- twitchy Script -->
+    <script src="http://burton-krahn.com/theme/js/pelican_twitchy.min.js"></script>
+
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'noel-burton-krahn'; // required: replace example with your forum shortname
+
+            var disqus_identifier = 'core-of-darkness';
+        var disqus_url = 'http://burton-krahn.com/core-of-darkness.html';
+
+    var disqus_config = function () {
+        this.language = "en";
+    };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- /disqus -->
+</body>
+</html>

@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Noel Burton-Krahn" />
+        <meta name="description" content="A toy proof of a math trick I learned in elementary school." />
+
+
+    <title>If a number is divisible by 3, then so is the sum of its digits - Noel Burton-Krahn</title>
+
+        <link rel="stylesheet" href="http://burton-krahn.com/theme/css/bootstrap.superhero.min.css" type="text/css"/>
+
+    <link href="http://burton-krahn.com/theme/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://burton-krahn.com/theme/css/pygments/native.css" rel="stylesheet" />
+    
+    <link href="http://burton-krahn.com/theme/css/pelican-twitchy.min.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+        <link href="http://burton-krahn.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Noel Burton-Krahn ATOM Feed" />
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small" class="twitchy-background">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="http://burton-krahn.com" title="Noel Burton-Krahn" class="collapsed">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="http://burton-krahn.com/archives.html" title="Recent Articles" class="collapsed">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </a>
+    </li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fa fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="/static/NoelBurtonKrahnResume.pdf" title="Resume"><i class="fa fa-resume-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/noelbk" title="GitHub"><i class="fa fa-github-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="mailto:noel@burton-krahn.com" title="Email"><i class="fa fa-envelope-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/noel.burtonkrahn" title="Facebook"><i class="fa fa-facebook-square fa-lg padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper" class="twitchy-background">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="http://burton-krahn.com/">
+                            <span class="glyphicon glyphicon-home padding-small"></span>
+                            Noel Burton-Krahn
+                    </a>
+                </li>
+                    <li class="nav-divider"></li>
+                    <li>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-latest">
+                            <span class="glyphicon glyphicon-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                    <li class="panel anti-panel"><ul id="collapse-latest" class="sidebar_submenu collapse in">
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/communicating-with-vegtative-patients.html" title="Communicating with vegtative patients">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Communicating with vegtative patients
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/deep-learning-for-medicine.html" title="Deep Learning for Medicine">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Deep Learning for Medicine
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/battlesnakes.html" title="Battlesnakes">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Battlesnakes
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a class="hide-overflow" href="http://burton-krahn.com/if-a-number-is-divisible-by-3-then-so-is-the-sum-of-its-digits.html" title="If a number is divisible by 3, then so is the sum of its digits">
+                                <i class="fa fa-file-text padding-small"></i>
+                                If a number is divisible by 3, then so is the sum of its digits
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/emacs-advanced-features-tutorial.html" title="Emacs Advanced Features Tutorial">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Emacs Advanced Features Tutorial
+                            </a>
+                        </li>
+                    <li>
+                        <a href="http://burton-krahn.com/archives.html">
+                            <i class="fa fa-arrow-right padding-small"></i>
+                            More
+                        </a>
+                    </li>
+                    </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fa fa-users padding-small"></i>
+                        Contact
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="/static/NoelBurtonKrahnResume.pdf" title="Resume">
+                            <i class="fa fa-resume-square fa-lg padding-small"></i>
+                            Resume
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/noelbk" title="GitHub">
+                            <i class="fa fa-github-square fa-lg padding-small"></i>
+                            GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:noel@burton-krahn.com" title="Email">
+                            <i class="fa fa-envelope-square fa-lg padding-small"></i>
+                            Email
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/noel.burtonkrahn" title="Facebook">
+                            <i class="fa fa-facebook-square fa-lg padding-small"></i>
+                            Facebook
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="http://burton-krahn.com/pages/resume.html">
+                            <i class="fa fa-file-text padding-small"></i>
+                            Resume
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li >
+                        <a href="http://burton-krahn.com/category/humour.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Humour
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="http://burton-krahn.com/category/math.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Math
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://burton-krahn.com/category/misc.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            misc
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://burton-krahn.com/category/programming.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Programming
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                </ul></li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-9">
+                <header class="page-header">
+                    <h1>
+                        <a href="http://burton-krahn.com/if-a-number-is-divisible-by-3-then-so-is-the-sum-of-its-digits.html"
+                           rel="bookmark"
+                           title="Permalink to If a number is divisible by 3, then so is the sum of its digits">
+                            If a number is divisible by 3, then so is the sum of its digits
+                        </a>
+                    </h1>
+                    <small>
+<div class="post-info">
+    <div class="publish-info-block">
+        <small>
+            <span class="published">
+                <i class="fa fa-calendar padding-small"></i><time datetime="2016-10-03T00:00:00-07:00"> Mon 03 October 2016</time>
+            </span>
+            <span class="category">
+                <i class="fa fa-folder-open padding-small"></i><a href="http://burton-krahn.com/category/math.html">Math</a>
+            </span>
+        </small>
+    </div>
+</div><!-- /.post-info -->                    </small>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="entry-content">
+                    <h1>Preamble</h1>
+<p>This is a toy proof of a math trick I learned in elementary school.
+It's really Just an excuse to play with
+<a href="https://www.latex-project.org/"><span class="math">\(\LaTeX\)</span></a>.</p>
+<p>This document is also available as
+<a href="http://burton-krahn.com/static/div3digits.pdf">PDF</a> and <span class="math">\(\LaTeX\)</span>
+<a href="http://burton-krahn.com/static/div3digits.tex">source</a>.</p>
+<h1>Introduction</h1>
+<p>There was a trick we learned in elementary school: if the sum of the
+digits of a number is divisible by 3, then the number itself is
+divisble by 3.</p>
+<p><strong>Example:</strong> Is <span class="math">\(54,321\)</span> divisible by <span class="math">\(3\)</span>?  The sum of digits <span class="math">\(5 + 4 + 3
++ 2 + 1 = 15\)</span>, which is divisible by <span class="math">\(3\)</span>, so <span class="math">\(54,321\)</span> should be divisible
+by <span class="math">\(3\)</span> according to this rule, and yes, <span class="math">\(54,321 = 3 \cdot 18,107\)</span>.</p>
+<p>Is that true for all numbers?</p>
+<h1>Proving it</h1>
+<p>We write numbers as strings of decimal digits like so:</p>
+<div class="math">$$
+\begin{align*}
+  54,321 &amp; = 5 \cdot 10,000 + 4 \cdot 1,000 + 3 \cdot 100 + 2 \cdot 10 + 1 \\
+         &amp; = 5 \cdot 10^4   + 4 \cdot 10^3 + 3 \cdot 10^2 + 2 \cdot 10^1 + 1 \cdot 10^0
+\end{align*}
+$$</div>
+<p>More precisely, we write an integer <span class="math">\(D\)</span> as a string of decimal digits:
+<span class="math">\(d_{n-1},{\ldots},d_1,d_0\)</span>, which represents the equation:</p>
+<div class="math">$$
+\begin{align*}
+  D &amp; = d_{n-1} 10^{n-1} + \cdots + d_1 10^1 + d_0 10^0 \\
+    &amp; = \sum_{i=0}^{n-1} d_i 10^i
+\end{align*}
+$$</div>
+<p>Given that definition of the digits of a number, we can prove the
+theorem.  First, a couple of mini-theorems:</p>
+<p><strong>Lemma 1:</strong> For all integer polynomials, <span class="math">\((x+1)^n = x k_n + 1\)</span> for
+some integer <span class="math">\(k_n\)</span>.  In other words, <span class="math">\((x+1)^n - 1\)</span> is divisible by
+<span class="math">\(x\)</span>.</p>
+<p><strong>Proof:</strong> By induction. First the base case where <span class="math">\(n=0\)</span>:</p>
+<div class="math">$$
+\begin{align*}
+    (x+1)^0 &amp; = 1 \\
+            &amp; = x \cdot 0 + 1
+\end{align*}
+$$</div>
+<p>So for the base base, <span class="math">\(k_0 = 0\)</span>.</p>
+<p>Now, the inductive step.  Assuming <span class="math">\(n\)</span>, prove <span class="math">\(n+1\)</span>:</p>
+<div class="math">$$
+\begin{align*}
+(x+1)^{n+1} &amp; = (x + 1)(x + 1)^n \\
+           &amp; = (x + 1)(x k_n + 1) &amp;&amp; \text{assuming $n$: $(x+1)^n = x k_n + 1$} \\
+           &amp; = x x k_n + x + x k_n + 1 \\
+           &amp; = x(x k_n + k_n + 1) + 1 \\
+           &amp; = x(k_{n+1}) + 1 &amp;&amp; \text{where $k_{n+1} = x k_n + k_n + 1$}
+\end{align*}
+$$</div>
+<p>We've proven the <span class="math">\(n+1\)</span> case: <span class="math">\((x+1)^{n+1} = x k_{n+1} + 1\)</span>, and by
+induction this is be true for all <span class="math">\(n \ge 0\)</span>.
+<span class="math">\(\square\)</span></p>
+<p><strong>Lemma 2:</strong> If <span class="math">\(D = p k + q\)</span>, then <span class="math">\(D\)</span> is divisible by <span class="math">\(p\)</span> if and
+only if <span class="math">\(q\)</span> is divisible by <span class="math">\(p\)</span>.</p>
+<p><strong>Proof: </strong> Assume <span class="math">\(q\)</span> is divisible by <span class="math">\(p\)</span>.  Then, <span class="math">\(q = p j\)</span> for some
+integer <span class="math">\(j\)</span>, and</p>
+<div class="math">$$
+\begin{align*} 
+D &amp; = p k + q \\
+  &amp; = p k + p j \\
+  &amp; = p (k + j)
+\end{align*} 
+$$</div>
+<p>thus <span class="math">\(D\)</span> is divisible by <span class="math">\(p\)</span>.</p>
+<p>Now, assume <span class="math">\(q\)</span> is {\bf not} divisible by <span class="math">\(p\)</span>.  Then, <span class="math">\(q = p j + r\)</span> for some <span class="math">\(0 &lt; r &lt; p\)</span>, and </p>
+<div class="math">$$
+\begin{align*} 
+D &amp; = p k + q \\
+  &amp; = p k + p j + r \\
+  &amp; = p (k + j) + r
+\end{align*} 
+$$</div>
+<p>and since <span class="math">\(0 &lt; r &lt; p\)</span>, <span class="math">\(D\)</span> is {\bf not} divisible by <span class="math">\(p\)</span>.</p>
+<p>Thus <span class="math">\(D = p k + q\)</span> is divisible by <span class="math">\(p\)</span> if and only if <span class="math">\(q\)</span> is divisible by <span class="math">\(p\)</span>.
+<span class="math">\(\square\)</span></p>
+<p>Now we can get back to the main theorem.</p>
+<p><strong>Theorem:</strong> If an integer <span class="math">\(D\)</span> is written as a string of digits
+<span class="math">\(d_{n-1},\ldots,d_1,d_0\)</span> where <span class="math">\(D = \sum_{i=0}^{n-1} d_i 10^i\)</span>, then
+<span class="math">\(D\)</span> is divisible by 3 if and only if the sum of its digits <span class="math">\(S =
+\sum_{i=0}^{n-1} d_i\)</span> is divisible by 3.</p>
+<p><strong>Proof:</strong> The proof uses the simple fact that <span class="math">\(10 = (9 + 1)\)</span>:</p>
+<div class="math">$$
+\begin{align*}    
+D &amp; = \sum_{i=0}^{n-1} d_i 10^i \\
+  &amp; = \sum_{i=0}^{n-1} d_i (9+1)^i \\
+  &amp; = \sum_{i=0}^{n-1} d_i (9k_i+1) &amp;&amp; \text{by Lemma 1}\\
+  &amp; = 9\sum_{i=0}^{n-1} d_i k_i + \sum_{i=0}^{n-1} d_i\\
+  &amp; = 9k + S &amp;&amp; \text{where $S$ is the sum of the digits of $D$}
+\end{align*}
+$$</div>
+<p>So <span class="math">\(D = 9k + S\)</span>, and by Lemma 2, <span class="math">\(D\)</span> is divisible by 9 if and only if
+the sum of its digits, <span class="math">\(S = \sum_{i=0}^{n-1} d_i\)</span> is also divisible by
+9.  That's an interesting result, but we were trying to prove that
+statement for 3.  However, since <span class="math">\(9 = 3 \cdot 3\)</span>:</p>
+<div class="math">$$
+\begin{align*}    
+D &amp; = 9k + S \\
+  &amp; = 3 \cdot 3 k + S \\
+  &amp; = 3 j + S
+\end{align*}
+$$</div>
+<p>Lemma 2 works again to prove that <span class="math">\(D\)</span> is divisible by 3 if and only if
+the sum of its digits, <span class="math">\(S = \sum_{i=0}^{n-1} d_i\)</span> is also divisible by
+3.
+<span class="math">\(\square\)</span></p>
+<h2>Epilogue</h2>
+<p>This proof used the fact that we write integers in base 10, and <span class="math">\(10 =
+(9+1)\)</span>, and thus if the sum of a number's digits in base 10 is
+divisible by 9 or 3, then so is the number itself.  This works for
+other bases too.  For example, if the number's digits are in base 8,
+this rule will work for all divisors of <span class="math">\(8 - 1 = 7\)</span>.  For example,
+<span class="math">\(5432_8 = 2842_{10} = 7 \cdot 406_{10}\)</span>, and <span class="math">\(5+4+3+2 =
+14_{10}\checkmark\)</span></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+                </div>
+                <footer class="text-right">
+                  <p>- Noel Burton-Krahn</p>
+                </footer>
+    <section id="comments" class="comments ">
+        <hr/>
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </section>
+            </div>
+        </div>
+    </article>
+</section>
+<footer>
+    <hr>
+    <div class="row">
+        <div class="col-lg-9 text-center">
+            <p><small>
+                Built by <a href="http://docs.getpelican.com/en/latest">Pelican</a> / <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a>
+                &middot;                    &copy; 2017 Noel Burton-Krahn
+            </small></p>
+        </div>
+    </div>
+</footer>            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.2 -->
+    <script src="http://burton-krahn.com/theme/js/jquery-1.11.2.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://burton-krahn.com/theme/js/bootstrap.min.js"></script>
+    <!-- twitchy Script -->
+    <script src="http://burton-krahn.com/theme/js/pelican_twitchy.min.js"></script>
+
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'noel-burton-krahn'; // required: replace example with your forum shortname
+
+            var disqus_identifier = 'if-a-number-is-divisible-by-3-then-so-is-the-sum-of-its-digits';
+        var disqus_url = 'http://burton-krahn.com/if-a-number-is-divisible-by-3-then-so-is-the-sum-of-its-digits.html';
+
+    var disqus_config = function () {
+        this.language = "en";
+    };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- /disqus -->
+</body>
+</html>

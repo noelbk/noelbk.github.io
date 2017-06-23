@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Noel Burton-Krahn" />
+        <meta name="keywords" content="nnet,fda" />
+        <meta name="description" content="Machine learning has made great strides in the last few years, and Convolutional Neural Networks have demonstrated some very impressive results in image and speech processing. There are some great opportunities to apply them to healthcare, but there are some significant challenges too. Deep Learning in Healthcare: Challenges and Opportunities …" />
+
+
+    <title>Deep Learning for Medicine - Noel Burton-Krahn</title>
+
+        <link rel="stylesheet" href="http://burton-krahn.com/theme/css/bootstrap.superhero.min.css" type="text/css"/>
+
+    <link href="http://burton-krahn.com/theme/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://burton-krahn.com/theme/css/pygments/native.css" rel="stylesheet" />
+    
+    <link href="http://burton-krahn.com/theme/css/pelican-twitchy.min.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+        <link href="http://burton-krahn.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Noel Burton-Krahn ATOM Feed" />
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small" class="twitchy-background">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="http://burton-krahn.com" title="Noel Burton-Krahn" class="collapsed">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="http://burton-krahn.com/archives.html" title="Recent Articles" class="collapsed">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </a>
+    </li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fa fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="/static/NoelBurtonKrahnResume.pdf" title="Resume"><i class="fa fa-resume-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/noelbk" title="GitHub"><i class="fa fa-github-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="mailto:noel@burton-krahn.com" title="Email"><i class="fa fa-envelope-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/noel.burtonkrahn" title="Facebook"><i class="fa fa-facebook-square fa-lg padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper" class="twitchy-background">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="http://burton-krahn.com/">
+                            <span class="glyphicon glyphicon-home padding-small"></span>
+                            Noel Burton-Krahn
+                    </a>
+                </li>
+                    <li class="nav-divider"></li>
+                    <li>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-latest">
+                            <span class="glyphicon glyphicon-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                    <li class="panel anti-panel"><ul id="collapse-latest" class="sidebar_submenu collapse in">
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/communicating-with-vegtative-patients.html" title="Communicating with vegtative patients">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Communicating with vegtative patients
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a class="hide-overflow" href="http://burton-krahn.com/deep-learning-for-medicine.html" title="Deep Learning for Medicine">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Deep Learning for Medicine
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/battlesnakes.html" title="Battlesnakes">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Battlesnakes
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/if-a-number-is-divisible-by-3-then-so-is-the-sum-of-its-digits.html" title="If a number is divisible by 3, then so is the sum of its digits">
+                                <i class="fa fa-file-text padding-small"></i>
+                                If a number is divisible by 3, then so is the sum of its digits
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="hide-overflow" href="http://burton-krahn.com/emacs-advanced-features-tutorial.html" title="Emacs Advanced Features Tutorial">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Emacs Advanced Features Tutorial
+                            </a>
+                        </li>
+                    <li>
+                        <a href="http://burton-krahn.com/archives.html">
+                            <i class="fa fa-arrow-right padding-small"></i>
+                            More
+                        </a>
+                    </li>
+                    </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fa fa-users padding-small"></i>
+                        Contact
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="/static/NoelBurtonKrahnResume.pdf" title="Resume">
+                            <i class="fa fa-resume-square fa-lg padding-small"></i>
+                            Resume
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/noelbk" title="GitHub">
+                            <i class="fa fa-github-square fa-lg padding-small"></i>
+                            GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:noel@burton-krahn.com" title="Email">
+                            <i class="fa fa-envelope-square fa-lg padding-small"></i>
+                            Email
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/noel.burtonkrahn" title="Facebook">
+                            <i class="fa fa-facebook-square fa-lg padding-small"></i>
+                            Facebook
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="http://burton-krahn.com/pages/resume.html">
+                            <i class="fa fa-file-text padding-small"></i>
+                            Resume
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li >
+                        <a href="http://burton-krahn.com/category/humour.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Humour
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://burton-krahn.com/category/math.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Math
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="http://burton-krahn.com/category/misc.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            misc
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="http://burton-krahn.com/category/programming.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            Programming
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                </ul></li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-9">
+                <header class="page-header">
+                    <h1>
+                        <a href="http://burton-krahn.com/deep-learning-for-medicine.html"
+                           rel="bookmark"
+                           title="Permalink to Deep Learning for Medicine">
+                            Deep Learning for Medicine
+                        </a>
+                    </h1>
+                    <small>
+<div class="post-info">
+    <div class="publish-info-block">
+        <small>
+            <span class="published">
+                <i class="fa fa-calendar padding-small"></i><time datetime="2017-04-30T00:00:00-07:00"> Sun 30 April 2017</time>
+            </span>
+            <span class="category">
+                <i class="fa fa-folder-open padding-small"></i><a href="http://burton-krahn.com/category/misc.html">misc</a>
+            </span>
+            <span class="tags">
+                <i class="fa fa-tags padding-small"></i>
+                <a href="http://burton-krahn.com/tag/nnet.html">nnet</a> /                 <a href="http://burton-krahn.com/tag/fda.html">fda</a>            </span>
+        </small>
+    </div>
+</div><!-- /.post-info -->                    </small>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="entry-content">
+                    <p>Machine learning has made great strides in the last few years, and
+<a href="http://cs231n.github.io/convolutional-networks/">Convolutional Neural Networks</a> have demonstrated
+some very impressive results in image and speech processing.  There
+are some great opportunities to apply them to healthcare, but there
+are some significant challenges too.</p>
+<ul>
+<li><a href="https://medium.com/the-mission/deep-learning-in-healthcare-challenges-and-opportunities-d2eee7e2545">Deep Learning in Healthcare: Challenges and Opportunities</a></li>
+</ul>
+<p>Regulatory approval requires a deeper understanding of the network
+than just black boxes, and there is new mathementics being developed
+to do just that.</p>
+<ul>
+<li>
+<p><a href="http://rsta.royalsocietypublishing.org/content/374/2065/20150203">Understanding deep convolutional networks</a>
+  Stéphane Mallat
+  Published 7 March 2016.DOI: 10.1098/rsta.2015.0203</p>
+</li>
+<li>
+<p><a href="https://matthewhirn.wordpress.com/portfolio/scattering-transforms/">Matthew Hirn, Scattering Transforms</a></p>
+</li>
+</ul>
+<blockquote>
+<p>Deep learning architectures have recently reemerged with the advent
+of new computational resources and algorithmic improvements. They
+are yielding remarkable state of the art results in numerous
+learning tasks, primarily in computer vision for the analysis of
+images, speech recognition, and natural language processing [...]
+However, the complexity of such algorithms means that they have
+remained essentially a black box, yielding proportionally little
+insight given their performance achievements, which limits their
+utility in fields outside of those traditionally tackled by the
+machine learning community and obstructs new scientific
+directions. My research aims to open this blackbox by utilizing
+tools from harmonic analysis to construct multiscale deep learning
+architectures amenable to mathematical analysis.</p>
+</blockquote>
+<p>Despite the challenges, devices based on neural networks have recently
+been granted FDA approval, and there are many startups emerging in
+this space.</p>
+<ul>
+<li>
+<p><a href="http://www.prnewswire.com/news-releases/arterys-receives-fda-clearance-for-the-first-zero-footprint-medical-imaging-analytics-cloud-software-with-deep-learning-for-cardiac-mri-300387880.html">Arterys Receives FDA Clearance For The First Zero-Footprint Medical Imaging Analytics Cloud Software With Deep Learning For Cardiac MRI</a></p>
+</li>
+<li>
+<p><a href="http://www.fiercebiotech.com/medical-devices/arterys-nabs-second-fda-ok-for-deep-learning-image-analysis-software">Arterys nabs second FDA OK for deep learning, image analysis software</a></p>
+</li>
+<li>
+<p><a href="https://www.google.ca/amp/www.nanalyze.com/2017/02/artificial-intelligence-medical-imaging/amp/">9 Artificial Intelligence Startups in Medical Imaging</a></p>
+</li>
+</ul>
+                </div>
+                <footer class="text-right">
+                  <p>- Noel Burton-Krahn</p>
+                </footer>
+    <section id="comments" class="comments ">
+        <hr/>
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </section>
+            </div>
+        </div>
+    </article>
+</section>
+<footer>
+    <hr>
+    <div class="row">
+        <div class="col-lg-9 text-center">
+            <p><small>
+                Built by <a href="http://docs.getpelican.com/en/latest">Pelican</a> / <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a>
+                &middot;                    &copy; 2017 Noel Burton-Krahn
+            </small></p>
+        </div>
+    </div>
+</footer>            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.2 -->
+    <script src="http://burton-krahn.com/theme/js/jquery-1.11.2.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://burton-krahn.com/theme/js/bootstrap.min.js"></script>
+    <!-- twitchy Script -->
+    <script src="http://burton-krahn.com/theme/js/pelican_twitchy.min.js"></script>
+
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'noel-burton-krahn'; // required: replace example with your forum shortname
+
+            var disqus_identifier = 'deep-learning-for-medicine';
+        var disqus_url = 'http://burton-krahn.com/deep-learning-for-medicine.html';
+
+    var disqus_config = function () {
+        this.language = "en";
+    };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- /disqus -->
+</body>
+</html>

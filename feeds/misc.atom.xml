@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Noel Burton-Krahn - misc</title><link href="http://burton-krahn.com/" rel="alternate"></link><link href="http://burton-krahn.com/feeds/misc.atom.xml" rel="self"></link><id>http://burton-krahn.com/</id><updated>2017-06-22T00:00:00-07:00</updated><entry><title>Communicating with vegtative patients</title><link href="http://burton-krahn.com/communicating-with-vegtative-patients.html" rel="alternate"></link><published>2017-06-22T00:00:00-07:00</published><updated>2017-06-22T00:00:00-07:00</updated><author><name>Noel Burton-Krahn</name></author><id>tag:burton-krahn.com,2017-06-22:/communicating-with-vegtative-patients.html</id><summary type="html">&lt;p&gt;Imagine if you were completely conscious but couldn't move or speak?
+&lt;a href="http://www.owenlab.uwo.ca/"&gt;Neuroscientist Adrian Owen&lt;/a&gt; has been
+using brain-imaging techniques to detect consciousness in patients who
+are presumed to be vegetative, sometimes for many years. By giving
+simple commands and then measuring brain activity, Owen has learned
+some patients are completely …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Imagine if you were completely conscious but couldn't move or speak?
+&lt;a href="http://www.owenlab.uwo.ca/"&gt;Neuroscientist Adrian Owen&lt;/a&gt; has been
+using brain-imaging techniques to detect consciousness in patients who
+are presumed to be vegetative, sometimes for many years. By giving
+simple commands and then measuring brain activity, Owen has learned
+some patients are completely aware despite being entirely unable to
+communicate or move their limbs.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.owenlab.uwo.ca/news_media/tv/documentaries.html"&gt;The Owen Lab - Documentaries&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Kate's Story
+  May 3, 2008&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/A04AvsGH0FU" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How we did it - communicating with a patient presumed to be in a vegetative state for 12 years
+  Nov 19, 2012&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/QOWNvi06Agc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The quest for consciousness: Adrian Owen at TEDxUWO&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/lvUvY_JrUgA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;  &lt;/p&gt;
+&lt;h2&gt;News Articles&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.theglobeandmail.com/technology/science/vegetative-patient-shows-he-is-aware-of-his-identity-whereabouts/article13721597/"&gt;Vegetative patient shows he is aware of his identity, whereabouts&lt;/a&gt;
+Aug. 12, 2013&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[...] one of three vegetative patients to correctly answer questions
+such as, “Are you in a hospital?” and “Is your name Mike?” posed
+using a new, more effective technique of magnetic resonance imaging
+(MRI). His responses are a leap forward in communications with
+unresponsive patients, building on a breakthrough contact that
+researchers achieved with him in 2012 using a more primitive
+technique.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;(Canadian patient in 'vegetative state' able to communicate)[
+https://www.theglobeandmail.com/life/the-hot-button/canadian-patient-in-vegetative-state-able-to-communicate/article5227276/]
+Nov. 13, 2012&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Because each of those thoughts activated different parts of the
+brain, British neuroscientist Adrian Owen, who led the team, says
+Routley was able to communicate clearly.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://www.theglobeandmail.com/life/health-and-fitness/vegetative-patient-now-able-to-give-thumbs-up-fuelling-debate/article1390975/"&gt;Vegetative patient now able to give 'thumbs up,' fuelling debate&lt;/a&gt;
+Apr. 24, 2012&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A hospital patient deemed vegetative is now able to make a “thumbs
+up” gesture – a sign to family that he is aware, but not yet strong
+enough to persuade doctors to drop a recommendation to withdraw life
+support.&lt;/p&gt;
+&lt;p&gt;A leading neuroscientist, Adrian Owen, travelled to Mr. Rasouli’s
+bedside at Sunnybrook on Tuesday, to conduct investigations to
+determine whether he can communicate.&lt;/p&gt;
+&lt;p&gt;His investigations come on the heels of a study he published in the
+medical journal The Lancet, revealing that 19 per cent of patients
+believed to be in an irreversible vegetative state showed signs of
+full consciousness when tested with an electroencephalography
+machine.&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="prolira"></category><category term="eeg"></category><category term="mri"></category></entry><entry><title>Deep Learning for Medicine</title><link href="http://burton-krahn.com/deep-learning-for-medicine.html" rel="alternate"></link><published>2017-04-30T00:00:00-07:00</published><updated>2017-04-30T00:00:00-07:00</updated><author><name>Noel Burton-Krahn</name></author><id>tag:burton-krahn.com,2017-04-30:/deep-learning-for-medicine.html</id><summary type="html">&lt;p&gt;Machine learning has made great strides in the last few years, and
+&lt;a href="http://cs231n.github.io/convolutional-networks/"&gt;Convolutional Neural Networks&lt;/a&gt; have demonstrated
+some very impressive results in image and speech processing.  There
+are some great opportunities to apply them to healthcare, but there
+are some significant challenges too.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://medium.com/the-mission/deep-learning-in-healthcare-challenges-and-opportunities-d2eee7e2545"&gt;Deep Learning in Healthcare: Challenges and Opportunities …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Machine learning has made great strides in the last few years, and
+&lt;a href="http://cs231n.github.io/convolutional-networks/"&gt;Convolutional Neural Networks&lt;/a&gt; have demonstrated
+some very impressive results in image and speech processing.  There
+are some great opportunities to apply them to healthcare, but there
+are some significant challenges too.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://medium.com/the-mission/deep-learning-in-healthcare-challenges-and-opportunities-d2eee7e2545"&gt;Deep Learning in Healthcare: Challenges and Opportunities&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Regulatory approval requires a deeper understanding of the network
+than just black boxes, and there is new mathementics being developed
+to do just that.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://rsta.royalsocietypublishing.org/content/374/2065/20150203"&gt;Understanding deep convolutional networks&lt;/a&gt;
+  Stéphane Mallat
+  Published 7 March 2016.DOI: 10.1098/rsta.2015.0203&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://matthewhirn.wordpress.com/portfolio/scattering-transforms/"&gt;Matthew Hirn, Scattering Transforms&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Deep learning architectures have recently reemerged with the advent
+of new computational resources and algorithmic improvements. They
+are yielding remarkable state of the art results in numerous
+learning tasks, primarily in computer vision for the analysis of
+images, speech recognition, and natural language processing [...]
+However, the complexity of such algorithms means that they have
+remained essentially a black box, yielding proportionally little
+insight given their performance achievements, which limits their
+utility in fields outside of those traditionally tackled by the
+machine learning community and obstructs new scientific
+directions. My research aims to open this blackbox by utilizing
+tools from harmonic analysis to construct multiscale deep learning
+architectures amenable to mathematical analysis.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Despite the challenges, devices based on neural networks have recently
+been granted FDA approval, and there are many startups emerging in
+this space.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.prnewswire.com/news-releases/arterys-receives-fda-clearance-for-the-first-zero-footprint-medical-imaging-analytics-cloud-software-with-deep-learning-for-cardiac-mri-300387880.html"&gt;Arterys Receives FDA Clearance For The First Zero-Footprint Medical Imaging Analytics Cloud Software With Deep Learning For Cardiac MRI&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.fiercebiotech.com/medical-devices/arterys-nabs-second-fda-ok-for-deep-learning-image-analysis-software"&gt;Arterys nabs second FDA OK for deep learning, image analysis software&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.google.ca/amp/www.nanalyze.com/2017/02/artificial-intelligence-medical-imaging/amp/"&gt;9 Artificial Intelligence Startups in Medical Imaging&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="nnet"></category><category term="fda"></category></entry></feed>

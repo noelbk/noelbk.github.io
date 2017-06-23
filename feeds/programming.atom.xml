@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Noel Burton-Krahn - Programming</title><link href="http://burton-krahn.com/" rel="alternate"></link><link href="http://burton-krahn.com/feeds/programming.atom.xml" rel="self"></link><id>http://burton-krahn.com/</id><updated>2017-03-10T00:00:00-08:00</updated><entry><title>Battlesnakes</title><link href="http://burton-krahn.com/battlesnakes.html" rel="alternate"></link><published>2017-03-10T00:00:00-08:00</published><updated>2017-03-10T00:00:00-08:00</updated><author><name>Noel Burton-Krahn</name></author><id>tag:burton-krahn.com,2017-03-10:/battlesnakes.html</id><summary type="html">&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Genetic_programming"&gt;Genetic programming&lt;/a&gt; for
+the win! This is my entry into the
+2017 &lt;a href="http://battlesnake.io"&gt;Battlesnake&lt;/a&gt; competition.&lt;/p&gt;
+&lt;div&gt;
+&lt;a href="https://cdn.rawgit.com/noelbk/genetisnake/abc247e/html/snake.html"&gt;
+See them in action!
+&lt;img src="https://raw.githubusercontent.com/noelbk/genetisnake/master/html/images/board2.png" width="322px" height="250px" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/noelbk/genetisnake"&gt;Git repo&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Genetic_programming"&gt;Genetic programming&lt;/a&gt; for
+the win! This is my entry into the
+2017 &lt;a href="http://battlesnake.io"&gt;Battlesnake&lt;/a&gt; competition.&lt;/p&gt;
+&lt;div&gt;
+&lt;a href="https://cdn.rawgit.com/noelbk/genetisnake/abc247e/html/snake.html"&gt;
+See them in action!
+&lt;img src="https://raw.githubusercontent.com/noelbk/genetisnake/master/html/images/board2.png" width="322px" height="250px" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/noelbk/genetisnake"&gt;Git repo&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>Emacs Advanced Features Tutorial</title><link href="http://burton-krahn.com/emacs-advanced-features-tutorial.html" rel="alternate"></link><published>2015-08-27T00:00:00-07:00</published><updated>2015-08-27T00:00:00-07:00</updated><author><name>Noel Burton-Krahn</name></author><id>tag:burton-krahn.com,2015-08-27:/emacs-advanced-features-tutorial.html</id><summary type="html">&lt;p&gt;The good bits of Emacs, after the online tutorial without too much kool-aid&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Emacs Advanced Features Tutorial&lt;/h2&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Depending on who you ask, Emacs is either an advanced text editor, a
+lisp-based operating system, or a program cleverly designed to tie
+your fingers into knots.  It's a bit of all of the above.  I encourage
+programmers to give it a try, but there seems to be a mythos around
+Emacs that it's too complicated to learn.  This is an advanced
+tutorial about Emacs.  I'll skip over most of the basics and get into
+more of the really advanced features that make it actually useful.&lt;/p&gt;
+&lt;h2&gt;Conventions&lt;/h2&gt;
+&lt;p&gt;Emacs is a lisp operating system with an editor bolted on top.  All
+the functions of Emacs are written in Lisp, and there are a lot of
+them.  There are functions for colorizing and indenting programming
+languages, reading email, games, etc.  More on that later.&lt;/p&gt;
+&lt;p&gt;Emacs functions are bound to keys.  There are lots of key
+combinations, so be prepared for some finger flexibility conditioning.
+Here's how key bindings are represented in Emacs documentation:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-&amp;quot;      - Means hold contol, then type a key
+&amp;quot;M-&amp;quot;      - Means type escape, then type a key.
+            Emacs calls this the &amp;quot;meta&amp;quot; key.
+&amp;quot;C-f&amp;quot;     - means hold control, press f, release
+&amp;quot;C-u C-f&amp;quot; - means hold control, press u, release, hold control,
+            press f, release
+&amp;quot;C-u f&amp;quot;   - means hold control, press u, release, type h
+&amp;quot;M-f&amp;quot;     - means press Escape, release, type f
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Emacs has an extensive online help system which I highly recommend to
+you... in a bit.  Reviewing the tutorial now, I can see where the
+mythos about weird key combos came from.  Emacs goes back to Richard
+Stallman's Editor MaCroS in 1976, before keyboards had standard cursor
+movement keys, so the tutorial starts with a long section on cursor
+movement using weird key bindings like "C-f", "C-b", "C-v", etc.
+Ignore all that.  The standard cursor movement keys work.  Feel free
+to take a detour to the tutorial now with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-h t&amp;quot; - Emacs tutorial
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;... Welcome back!  I'll start with some basic commands first if you
+skipped the tutorial, but you can get back to it any time with "C-h
+t".&lt;/p&gt;
+&lt;h2&gt;Before We Begin&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Download this whole repo from github&lt;/p&gt;
+&lt;p&gt;git clone &lt;a href="https://github.com/noelbk/emacstut"&gt;https://github.com/noelbk/emacstut&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;cd emacstut&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install this .emacs startup file.  I added a couple of simple
+   keybindings.&lt;/p&gt;
+&lt;p&gt;cp -i dot-emacs ~/.emacs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reopen this tutorial in Emacs&lt;/p&gt;
+&lt;p&gt;emacs README.md&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Basic Commands&lt;/h2&gt;
+&lt;p&gt;Safety first:  In case you need to quit emacs (not yet, though!):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-x C-c&amp;quot; - quit emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and in case you get stuck in a command, or Emacs becomes unresponsive
+because a command's taking too long, you can always break out of the
+current command with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-g&amp;quot; - quit current function
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now on to editing files:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-x C-f&amp;quot; - open a file in a new buffer
+
+&amp;quot;C-x k&amp;quot; - kill buffer (close file)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Wait! don't open a new file until you know how to get back here.  Let
+me tell you about buffers first.  Emacs opens files in buffers, and
+displays buffers in windows.  Let's do a quick experiment in Emacs
+(you &lt;em&gt;are&lt;/em&gt; reading this file in Emacs, right?) to make sure you know
+how to open a new buffer, display it, and get back.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Type "C-x 4 f hellotut.c" to open hellotut.c in a new window.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Notice how the screen is split now with hellotut.c below this
+   tutorial.Also, notice how the cursor is in the hellotut.c window,
+   and the cursor in this window is hollow.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Type "C-x o" to move the cursor back to this window.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Type "C-x 1" to make this window take up the whole frame.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Type "C-x b RET" to switch to viewing hellotut.c again.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Congratulations for finding your way back here with another
+   "C-x b RET"!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Eventually you may find you never leave Emacs, just keep opening new
+buffers within it and switching between them.  Goodbye, mouse!&lt;/p&gt;
+&lt;h2&gt;Help&lt;/h2&gt;
+&lt;p&gt;Did I mention Emacs has a great help system?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-h ?&amp;quot; - list all help commands
+&amp;quot;C-h t&amp;quot; - Emacs tutorial
+&amp;quot;C-h b&amp;quot; - list all key bindings
+&amp;quot;C-h k&amp;quot; - help for a particular key binding
+&amp;quot;C-h f&amp;quot; - help for a function
+&amp;quot;C-h a&amp;quot; - help apropos - keyword search
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is one of my favorites to explore all the functions available in Emacs:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-h f TAB&amp;quot; - list all functions in emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Oh, and you can open man pages in emacs too:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;M-x man&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Emacs has its own manual system called info, which is extensive:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-h i&amp;quot; - list all functions in emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Shells&lt;/h2&gt;
+&lt;p&gt;You can run interactive shells inside emacs buffers.  That means you
+can cut-and-paste from example code into shells, from shells to your
+log, etc.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;M-x shell&amp;quot; - start a new shell in a buffer named *shell*
+&amp;quot;M-x newshell&amp;quot; - start a new shell in a buffer with a new name
+
+&amp;quot;M-!&amp;quot;     - put shell command output in new buffer
+&amp;quot;C-u M-!&amp;quot; - insert shell command output at cursor
+&amp;quot;M-|&amp;quot;     - pipe region through command, output in new buffer
+&amp;quot;C-u M-|&amp;quot; - pipe region through command, output at cursor
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Emacs shells are a little different from regular terminals: Your
+cursor is free to move off the command line, so you can move, select,
+and search in them like any other buffer.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-x h&amp;quot;, &amp;quot;C-w&amp;quot; - cut all text (clear the buffer)
+&amp;quot;M-&amp;gt;&amp;quot; - end of buffer (last command line)
+&amp;quot;M-p&amp;quot; - previous command (command history)
+&amp;quot;M-r&amp;quot; - regexp search backwards through command history
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Emacs shells also track the current directory, so when you do "C-x f"
+to open a file, it's relative to the shell's current directory.&lt;/p&gt;
+&lt;p&gt;Emacs shells are dumb.  They don't do terminal emulation.  If you
+really need terminal capabilities for curses, use&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;M-x term&amp;quot; - start a shell in terminal mode
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Emacs can open and edit files on remote hosts, and open shells there
+too:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;M-x ssh&amp;quot; - start a shell ssh&amp;#39;ed to user@host
+
+&amp;quot;C-x C-f /ssh:USER@HOST:PATH&amp;quot; open a file via ssh to HOST
+
+&amp;quot;C-x C-f /sudo::PATH&amp;quot; open a file with sudo, so you can edit root-writable files with tramp
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Compilation&lt;/h2&gt;
+&lt;p&gt;Compilation buffers work like grep, Emacs runs a command into a buffer then parses the results to iterate over errors:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;M-x compile&amp;quot; - run make in a buffer
+&amp;quot;M-x `&amp;quot; - next-error - jump to next error
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Try it now:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;1. &amp;quot;M-x compile&amp;quot; - oops! you should see an error in hellotut.c
+2. &amp;quot;M-x `&amp;quot; - will open the file hellotut.c at the error
+3. comment out &amp;quot;Intentional error here!&amp;quot;
+4. &amp;quot;M-x compile&amp;quot; - compiled OK
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Amusements&lt;/h2&gt;
+&lt;p&gt;Did I mention emacs is a lisp OS?  Yes, there are games:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;M-x life&amp;quot;
+&amp;quot;M-x pong&amp;quot;
+&amp;quot;M-x snake&amp;quot;
+&amp;quot;M-x hanoi&amp;quot;
+&amp;quot;M-x doctor&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Buffers, Windows and Frames&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-x f&amp;quot; - open file in a new buffer
+&amp;quot;C-x 4 f&amp;quot; - open file in buffer, split window
+&amp;quot;C-x k&amp;quot; - kill buffer (close file)
+
+&amp;quot;C-x b&amp;quot; - switch to buffer
+&amp;quot;C-x o&amp;quot; - move cursor to other window
+&amp;quot;C-x 1&amp;quot; - make current buffer fill window
+
+&amp;quot;C-x C-b&amp;quot; - list all buffers
+
+&amp;quot;C-x 4 b&amp;quot; - switch to buffer, split window vertically
+&amp;quot;C-x 3 b&amp;quot; - switch to buffer, split window horizontally
+&amp;quot;C-x 5 b&amp;quot; - switch to buffer in new frame
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Selecting text&lt;/h2&gt;
+&lt;p&gt;Cutting, copying, and pasting&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-SPC&amp;quot; - Set the mark.  That&amp;#39;s used for selecting a range of text
+          between the mark and the cursor
+
+&amp;quot;C-x h&amp;quot; - select the whole buffer.
+
+&amp;quot;C-w&amp;quot; - cut text between cursor and mark.  Sorry, Emacs was
+        invented before Macintosh, so it bound the now common C-x
+        and C-v to other functions.
+
+&amp;quot;M-w&amp;quot; - copy text between point and mark
+
+&amp;quot;C-y&amp;quot; - paste text
+
+&amp;quot;C-x r k&amp;quot; - cut a rectangle of text between cursor and mark
+&amp;quot;C-x r y&amp;quot; - paste a rectangle of text
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Searching&lt;/h2&gt;
+&lt;p&gt;The i in isearch is for incremental.  Emacs will search and highlight
+matches as you type.  Type "C-r" to search backwards.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-s&amp;quot; - isearch
+&amp;quot;C-s C-r&amp;quot; - isearch backwards
+&amp;quot;M-C-s&amp;quot; - regexp isearch
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Query-replace prompts for each replacement:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C-r&amp;quot; - query replace regexp
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Even better, you can run grep into a buffer, then step through the
+results, jumping to matches:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;M-x grep&amp;quot; - run grep over files in the current directory
+&amp;quot;M-x grep-find&amp;quot; - run grep recursively into subdirs
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Modes&lt;/h2&gt;
+&lt;p&gt;Each buffer has a mode for the type of file it contains.  The mode
+controls syntax highlighting, indentation rules, and mode-specific
+functions.&lt;/p&gt;
+&lt;p&gt;For example, if you open hellotut.c again, you'll be in c++-mode.  Try
+these commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &amp;quot;M-\&amp;quot; - indent region
+  &amp;quot;)&amp;quot;, &amp;quot;}&amp;quot;, &amp;quot;]&amp;quot; - blink matching parens
+  &amp;quot;C-h m&amp;quot; - help on current mode
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;What Next?&lt;/h2&gt;
+&lt;p&gt;Finger exercises :).  Then, read the tutorial and explore the info
+system with "C-h i".  Also see &lt;a href="http://www.gnu.org/software/emacs/tour/"&gt;A Guided Tour of
+Emacs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Questions, comments, and pull requests are welcome!  I'd like to hear
+how Emacs worked out for you.&lt;/p&gt;
+&lt;p&gt;Noel Burton-Krahn &lt;a href="&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#116;&amp;#111;&amp;#58;&amp;#110;&amp;#111;&amp;#101;&amp;#108;&amp;#64;&amp;#98;&amp;#117;&amp;#114;&amp;#116;&amp;#111;&amp;#110;&amp;#45;&amp;#107;&amp;#114;&amp;#97;&amp;#104;&amp;#110;&amp;#46;&amp;#99;&amp;#111;&amp;#109;"&gt;&amp;#110;&amp;#111;&amp;#101;&amp;#108;&amp;#64;&amp;#98;&amp;#117;&amp;#114;&amp;#116;&amp;#111;&amp;#110;&amp;#45;&amp;#107;&amp;#114;&amp;#97;&amp;#104;&amp;#110;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;
+  Aug 27, 2015&lt;/p&gt;</content></entry></feed>
