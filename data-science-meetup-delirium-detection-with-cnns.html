@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Noel Burton-Krahn" />
-        <meta name="keywords" content="eeg" />
-        <meta name="description" content="Imagine if you were completely conscious but couldn&#39;t move or speak? Neuroscientist Adrian Owen has been using brain-imaging techniques to detect consciousness in patients who are presumed to be vegetative, sometimes for many years. By giving simple commands and then measuring brain activity, Owen has learned some patients are completely …" />
+        <meta name="keywords" content="log,eeg,cnn,nnet" />
+        <meta name="description" content="Introduction Noel Burton-Krahn Delirium Detection in EEGs Got baseStudyEDF: control and delerium EEGs Total Control: 27 Total Delirium: 25 Neural Networks Images from CS231n Convolutional Neural Networks for Visual Recognition Convolutional Networks Deep Neural Networks Demo Digit Classifier 2D Visualization of a CNN by A Harley, Ryerson https://vimeo.com …" />
 
 
-    <title>Communicating with vegtative patients - Noel Burton-Krahn</title>
+    <title>Data Science Meetup: Delirium Detection With CNNs - Noel Burton-Krahn</title>
 
         <link rel="stylesheet" href="http://burton-krahn.com/theme/css/bootstrap.superhero.min.css" type="text/css"/>
 
@@ -92,6 +92,12 @@
                     </li>
                     <li class="panel anti-panel"><ul id="collapse-latest" class="sidebar_submenu collapse in">
                         <li class="active">
+                            <a class="hide-overflow" href="http://burton-krahn.com/data-science-meetup-delirium-detection-with-cnns.html" title="Data Science Meetup: Delirium Detection With CNNs">
+                                <i class="fa fa-file-text padding-small"></i>
+                                Data Science Meetup: Delirium Detection With CNNs
+                            </a>
+                        </li>
+                        <li class="">
                             <a class="hide-overflow" href="http://burton-krahn.com/communicating-with-vegtative-patients.html" title="Communicating with vegtative patients">
                                 <i class="fa fa-file-text padding-small"></i>
                                 Communicating with vegtative patients
@@ -113,12 +119,6 @@
                             <a class="hide-overflow" href="http://burton-krahn.com/if-a-number-is-divisible-by-3-then-so-is-the-sum-of-its-digits.html" title="If a number is divisible by 3, then so is the sum of its digits">
                                 <i class="fa fa-file-text padding-small"></i>
                                 If a number is divisible by 3, then so is the sum of its digits
-                            </a>
-                        </li>
-                        <li class="">
-                            <a class="hide-overflow" href="http://burton-krahn.com/emacs-advanced-features-tutorial.html" title="Emacs Advanced Features Tutorial">
-                                <i class="fa fa-file-text padding-small"></i>
-                                Emacs Advanced Features Tutorial
                             </a>
                         </li>
                     <li>
@@ -193,6 +193,13 @@
                             <span class="badge pull-right categorybadge">1</span>
                         </a>
                     </li>
+                    <li class="active">
+                        <a href="http://burton-krahn.com/category/log.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            log
+                            <span class="badge pull-right categorybadge">1</span>
+                        </a>
+                    </li>
                     <li >
                         <a href="http://burton-krahn.com/category/math.html">
                             <i class="fa fa-folder-open padding-small"></i>
@@ -200,7 +207,7 @@
                             <span class="badge pull-right categorybadge">1</span>
                         </a>
                     </li>
-                    <li class="active">
+                    <li >
                         <a href="http://burton-krahn.com/category/misc.html">
                             <i class="fa fa-folder-open padding-small"></i>
                             misc
@@ -235,10 +242,10 @@
             <div class="col-lg-9">
                 <header class="page-header">
                     <h1>
-                        <a href="http://burton-krahn.com/communicating-with-vegtative-patients.html"
+                        <a href="http://burton-krahn.com/data-science-meetup-delirium-detection-with-cnns.html"
                            rel="bookmark"
-                           title="Permalink to Communicating with vegtative patients">
-                            Communicating with vegtative patients
+                           title="Permalink to Data Science Meetup: Delirium Detection With CNNs">
+                            Data Science Meetup: Delirium Detection With CNNs
                         </a>
                     </h1>
                     <small>
@@ -246,14 +253,14 @@
     <div class="publish-info-block">
         <small>
             <span class="published">
-                <i class="fa fa-calendar padding-small"></i><time datetime="2017-06-22T00:00:00-07:00"> Thu 22 June 2017</time>
+                <i class="fa fa-calendar padding-small"></i><time datetime="2017-07-26T00:00:00-07:00"> Wed 26 July 2017</time>
             </span>
             <span class="category">
-                <i class="fa fa-folder-open padding-small"></i><a href="http://burton-krahn.com/category/misc.html">misc</a>
+                <i class="fa fa-folder-open padding-small"></i><a href="http://burton-krahn.com/category/log.html">log</a>
             </span>
             <span class="tags">
                 <i class="fa fa-tags padding-small"></i>
-                <a href="http://burton-krahn.com/tag/eeg.html">eeg</a>            </span>
+                <a href="http://burton-krahn.com/tag/log.html">log</a> /                 <a href="http://burton-krahn.com/tag/eeg.html">eeg</a> /                 <a href="http://burton-krahn.com/tag/cnn.html">cnn</a> /                 <a href="http://burton-krahn.com/tag/nnet.html">nnet</a>            </span>
         </small>
     </div>
 </div><!-- /.post-info -->                    </small>
@@ -263,63 +270,167 @@
         <div class="row">
             <div class="col-lg-9">
                 <div class="entry-content">
-                    <p>Imagine if you were completely conscious but couldn't move or speak?
-<a href="http://www.owenlab.uwo.ca/">Neuroscientist Adrian Owen</a> has been
-using brain-imaging techniques to detect consciousness in patients who
-are presumed to be vegetative, sometimes for many years. By giving
-simple commands and then measuring brain activity, Owen has learned
-some patients are completely aware despite being entirely unable to
-communicate or move their limbs.</p>
-<h2><a href="http://www.owenlab.uwo.ca/news_media/tv/documentaries.html">The Owen Lab - Documentaries</a></h2>
+                    <h1>Introduction</h1>
+<p>Noel Burton-Krahn</p>
+<h1>Delirium Detection in EEGs</h1>
+<p>Got baseStudyEDF: control and delerium EEGs
+Total Control: 27
+Total Delirium: 25</p>
+<p><img alt="baseStudyEDF" src="{filename}../static/2017-04-26/baseStudyEDF.png"></p>
+<h1>Neural Networks</h1>
+<p>Images from <a href="http://cs231n.github.io/convolutional-networks/">CS231n Convolutional Neural Networks for Visual Recognition</a></p>
+<p><img alt="neural_net2" src="{filename}../static/20170727/neural_net2.jpeg"></p>
+<p><img alt="cnn" src="{filename}../static/20170727/cnn.jpeg"></p>
+<h2>Convolutional Networks</h2>
+<p><img alt="convnet" src="{filename}../static/20170727/convnet.jpeg"></p>
+<p><img alt="weights" src="{filename}../static/20170727/weights.jpeg"></p>
+<h2>Deep Neural Networks</h2>
+<p><img alt="AlexNet" src="{filename}../static/20170727/Figure-27-CNN-Architecture-from-AlexNet-32.jpg"></p>
+<p><img alt="inception" src="{filename}../static/20170727/inception.png"></p>
+<h2>Demo Digit Classifier</h2>
+<p><a href="http://scs.ryerson.ca/~aharley/vis/conv/flat.html">2D Visualization of a CNN</a> by A Harley, Ryerson</p>
+<p>https://vimeo.com/125940125</p>
+<h1>A CNN for Delirium Detection</h1>
+<p>Made 4<em>CONV + 2</em>FC CNN: avg*2, 64x8, 32x8, 16x8, 8x4, 64, 64, 1</p>
+<p>in Python's Keras</p>
+<div class="highlight"><pre><span></span>    Input(inputs.shape[1:])
+    AveragePooling1D(pool_size=2)
+    Conv1D(64, 8, activation=&#39;relu&#39;)
+    MaxPooling1D()
+    Conv1D(32, 8, activation=&#39;relu&#39;)
+    MaxPooling1D()
+    Conv1D(16, 8, activation=&#39;relu&#39;)
+    MaxPooling1D()
+    Conv1D(2, 8, activation=&#39;relu&#39;)
+    MaxPooling1D(8)
+    Flatten()
+    Dense(64, activation=&#39;sigmoid&#39;,
+          kernel_regularizer=regularizers.l2(0.01),
+          activity_regularizer=regularizers.l1(0.01),
+          )
+    Dense(64, activation=&#39;sigmoid&#39;)
+    Dense(1, activation=&#39;sigmoid&#39;)
+</pre></div>
+
+
+<p><img alt="baseStudyEDF" src="{filename}../static/2017-04-26/model.png"></p>
+<h2>Training</h2>
+<p>Trained on 3 splits: train on 66% of data, evaluate on 33% untrained
+data.  Average accuracy: (94 + 100 + 82)/3 = 92%</p>
+<p><img alt="baseStudyEDF" src="{filename}../static/2017-04-26/split0.png">
+<img alt="baseStudyEDF" src="{filename}../static/2017-04-26/split1.png">
+<img alt="baseStudyEDF" src="{filename}../static/2017-04-26/split2.png"></p>
+<p>The training graphs demonstrate:</p>
 <ul>
-<li>Kate's Story
-  May 3, 2008</li>
+<li>
+<p>92% accuracy on untrained validation data is pretty good</p>
+</li>
+<li>
+<p>The training dataset is too small.  When the training accuracy goes
+  to 100%, the net is overfitted to the data.</p>
+</li>
 </ul>
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/A04AvsGH0FU" frameborder="0" allowfullscreen></iframe></p>
+<p><img alt="split0.gif" src="{filename}../static/2017-04-27/model-split0.gif">
+<img alt="split1.gif" src="{filename}../static/2017-04-27/model-split1.gif">
+<img alt="split2.gif" src="{filename}../static/2017-04-27/model-split2.gif"></p>
+<h1>CNNs are easily Fooled</h1>
+<p><a href="https://blog.openai.com/adversarial-example-research/">Attacking Machine Learning with Adversarial Examples</a>
+<img alt="blackbox" src="{filename}../static/20170727/adversarial_img_1.png"></p>
+<p><a href="http://anhnguyen.me/project/fooling/">Deep Neural Network are Easily Fooled: High Confidence Predictions for Unrecognizable Images</a>
+<img alt="blackbox" src="{filename}../static/20170727/diversity_40_images_label.png"></p>
+<h2>The Black Box Problem</h2>
+<p><img alt="blackbox" src="{filename}../static/20170727/blackbox.jpg"></p>
+<p>Medical device approval requires justification.</p>
+<h2>FDA Approval is Possible</h2>
+<p>Despite the challenges, devices based on neural networks have recently
+been granted FDA approval, and there are many startups emerging in
+this space.</p>
 <ul>
-<li>How we did it - communicating with a patient presumed to be in a vegetative state for 12 years
-  Nov 19, 2012</li>
+<li>
+<p><a href="http://www.prnewswire.com/news-releases/arterys-receives-fda-clearance-for-the-first-zero-footprint-medical-imaging-analytics-cloud-software-with-deep-learning-for-cardiac-mri-300387880.html">Arterys Receives FDA Clearance For The First Zero-Footprint Medical Imaging Analytics Cloud Software With Deep Learning For Cardiac MRI</a></p>
+</li>
+<li>
+<p><a href="http://www.fiercebiotech.com/medical-devices/arterys-nabs-second-fda-ok-for-deep-learning-image-analysis-software">Arterys nabs second FDA OK for deep learning, image analysis software</a></p>
+</li>
+<li>
+<p><a href="https://www.google.ca/amp/www.nanalyze.com/2017/02/artificial-intelligence-medical-imaging/amp/">9 Artificial Intelligence Startups in Medical Imaging</a></p>
+</li>
 </ul>
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/QOWNvi06Agc" frameborder="0" allowfullscreen></iframe></p>
+<h1>CNN Analysis</h1>
+<p>Did deeper analysis of the CNN convolution filters.  Convolution
+filters are similar to wavelets in that they perform a multiscale
+correlation of the input signal with learned feature fragments.  Lower
+layers convolve with the outputs of upper layers to match larger scale
+features.</p>
+<p>These graphs show the input feature that maximizes neuron excitment
+for each convolution filtter at each level.</p>
+<p>The final correlation layer's output is passed through a
+fully-connected network for final classification.</p>
+<p><img alt="baseStudyEDF" src="{filename}../static/2017-04-26/model-split0-epoch28-val_acc0.94.hdf5-layer1.png">
+<img alt="baseStudyEDF" src="{filename}../static/2017-04-26/model-split0-epoch28-val_acc0.94.hdf5-layer4.png">
+<img alt="baseStudyEDF" src="{filename}../static/2017-04-26/model-split0-epoch28-val_acc0.94.hdf5-layer7.png">
+<img alt="baseStudyEDF" src="{filename}../static/2017-04-26/model-split0-epoch28-val_acc0.94.hdf5-layer10.png"></p>
+<h1>Other ways of looking at EEGS</h1>
+<h2>Frequency spectrogram</h2>
+<p>Spectrograms of 8 delirium and 8 control EEGs</p>
+<p><img alt="eeg-spectrogram.png" src="{filename}../static/20170505/eeg-spectrogram.png"></p>
+<h2>Wavelet transform</h2>
+<p>Problem: The DWT is shift-variant</p>
+<p>Solution?  The <a href="http://people.math.sc.edu/blanco/imi/dtcwt0.pdf">The Dual-Tree Complex Wavelet Transform</a> is shift-invariant</p>
+<p><a href="https://pypi.python.org/pypi/dtcwt/">Python dtcwt</a></p>
+<p>Here's the DTCWT vs the DWT for a control EEG</p>
+<p><img alt="dtcwt-dwt-control1.png" src="{filename}../static/2017-05-02/dtcwt-dwt-control1.png"></p>
+<p>And the DTCWT for a control vs delirium EEG</p>
+<p><img alt="dtcwt1-control-delirum.png" src="{filename}../static/2017-05-02/dtcwt1-control-delirum.png"></p>
+<p>Examining 8sec DWT samples grouped by patient, ordered by validate_acc
+during training.  Each 8sec dwt block was used as a validation point
+in 3 keras training runs, and sorted by average accuracy.  The results
+were tabulated in a Jupyter notebook which could overlay blocks
+interacively for visual comparison.</p>
+<p>The most consistently accurate delirium blocks appeared to have high
+frequency oscillations around coeffs 90-128.  Also sometimes high
+amplitudes in the 1-64 coeff range.</p>
+<p>The most consistently accurate control blocks has low frequency
+oscillations around coeffs 90-128, and low amplitudes overall.</p>
+<p>There were exceptions to these rules that were nevertheless
+consistently accurate.</p>
+<p><img alt="jupyter_validate_acc" src="{filename}/static/20170515/jupyter_validate_acc.png"></p>
+<h2>Continuous wavelet transform of 8sec delirium eeg</h2>
+<p>From noel/classifiers/CWTTest.ipynb</p>
+<p><img alt="dwt-cwt" src="{filename}/static/20170519/20170519-cwt.png"></p>
+<h2>Trying CNN on Wavelet transform</h2>
+<p>Goal: to find a wavelet basis that isolates the delirium features.</p>
+<p>Found: dtcwt scales 6-8, (8Hz, 4Hz, 2Hz, 896 points per sample, from
+32k), fc16, fc16 nnet: 98.1%</p>
+<video width="720" height="240" controls>
+  <source src="../../static/2017-05-03/eeg-ddtcwt-nnet-coeffs4-5-fc16.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<h1>Conclusions</h1>
 <ul>
-<li>The quest for consciousness: Adrian Owen at TEDxUWO</li>
+<li>
+<p>Deep networks can produce high accuracy</p>
+</li>
+<li>
+<p>But they can be fooled, and the error resonse is unknown</p>
+</li>
+<li>
+<p>They need to be fully explained to satisfy regulatory requirements</p>
+</li>
 </ul>
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/lvUvY_JrUgA" frameborder="0" allowfullscreen></iframe>  </p>
-<h2>News Articles</h2>
-<p><a href="https://www.theglobeandmail.com/technology/science/vegetative-patient-shows-he-is-aware-of-his-identity-whereabouts/article13721597/">Vegetative patient shows he is aware of his identity, whereabouts</a>
-Aug. 12, 2013</p>
-<blockquote>
-<p>[...] one of three vegetative patients to correctly answer questions
-such as, “Are you in a hospital?” and “Is your name Mike?” posed
-using a new, more effective technique of magnetic resonance imaging
-(MRI). His responses are a leap forward in communications with
-unresponsive patients, building on a breakthrough contact that
-researchers achieved with him in 2012 using a more primitive
-technique.</p>
-</blockquote>
-<p><a href="https://www.theglobeandmail.com/life/the-hot-button/canadian-patient-in-vegetative-state-able-to-communicate/article5227276/">Canadian patient in 'vegetative state' able to communicate</a>
-Nov. 13, 2012</p>
-<blockquote>
-<p>Because each of those thoughts activated different parts of the
-brain, British neuroscientist Adrian Owen, who led the team, says
-Routley was able to communicate clearly.</p>
-</blockquote>
-<p><a href="https://www.theglobeandmail.com/life/health-and-fitness/vegetative-patient-now-able-to-give-thumbs-up-fuelling-debate/article1390975/">Vegetative patient now able to give 'thumbs up,' fuelling debate</a>
-Apr. 24, 2012</p>
-<blockquote>
-<p>A hospital patient deemed vegetative is now able to make a “thumbs
-up” gesture – a sign to family that he is aware, but not yet strong
-enough to persuade doctors to drop a recommendation to withdraw life
-support.</p>
-<p>A leading neuroscientist, Adrian Owen, travelled to Mr. Rasouli’s
-bedside at Sunnybrook on Tuesday, to conduct investigations to
-determine whether he can communicate.</p>
-<p>His investigations come on the heels of a study he published in the
-medical journal The Lancet, revealing that 19 per cent of patients
-believed to be in an irreversible vegetative state showed signs of
-full consciousness when tested with an electroencephalography
-machine.</p>
-</blockquote>
+<h1>Future Work</h1>
+<ul>
+<li>
+<p>Maybe a CNN with smaller FC layers would be easier:  just convolutions, no fully-connected layers?</p>
+</li>
+<li>
+<p>Try in wavelet domain to reduce convolutional layers</p>
+</li>
+<li>
+<p>Try genetic algorithm for optimizing layers</p>
+</li>
+</ul>
                 </div>
                 <footer class="text-right">
                   <p>- Noel Burton-Krahn</p>
@@ -363,8 +474,8 @@ machine.</p>
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'noel-burton-krahn'; // required: replace example with your forum shortname
 
-            var disqus_identifier = 'communicating-with-vegtative-patients';
-        var disqus_url = 'http://burton-krahn.com/communicating-with-vegtative-patients.html';
+            var disqus_identifier = 'data-science-meetup-delirium-detection-with-cnns';
+        var disqus_url = 'http://burton-krahn.com/data-science-meetup-delirium-detection-with-cnns.html';
 
     var disqus_config = function () {
         this.language = "en";

@@ -38,8 +38,7 @@ unresponsive patients, building on a breakthrough contact that
 researchers achieved with him in 2012 using a more primitive
 technique.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;(Canadian patient in 'vegetative state' able to communicate)[
-https://www.theglobeandmail.com/life/the-hot-button/canadian-patient-in-vegetative-state-able-to-communicate/article5227276/]
+&lt;p&gt;&lt;a href="https://www.theglobeandmail.com/life/the-hot-button/canadian-patient-in-vegetative-state-able-to-communicate/article5227276/"&gt;Canadian patient in 'vegetative state' able to communicate&lt;/a&gt;
 Nov. 13, 2012&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Because each of those thoughts activated different parts of the
@@ -61,7 +60,7 @@ medical journal The Lancet, revealing that 19 per cent of patients
 believed to be in an irreversible vegetative state showed signs of
 full consciousness when tested with an electroencephalography
 machine.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="prolira"></category><category term="eeg"></category><category term="mri"></category></entry><entry><title>Deep Learning for Medicine</title><link href="http://burton-krahn.com/deep-learning-for-medicine.html" rel="alternate"></link><published>2017-04-30T00:00:00-07:00</published><updated>2017-04-30T00:00:00-07:00</updated><author><name>Noel Burton-Krahn</name></author><id>tag:burton-krahn.com,2017-04-30:/deep-learning-for-medicine.html</id><summary type="html">&lt;p&gt;Machine learning has made great strides in the last few years, and
+&lt;/blockquote&gt;</content><category term="eeg"></category></entry><entry><title>Deep Learning for Medicine</title><link href="http://burton-krahn.com/deep-learning-for-medicine.html" rel="alternate"></link><published>2017-04-30T00:00:00-07:00</published><updated>2017-04-30T00:00:00-07:00</updated><author><name>Noel Burton-Krahn</name></author><id>tag:burton-krahn.com,2017-04-30:/deep-learning-for-medicine.html</id><summary type="html">&lt;p&gt;Machine learning has made great strides in the last few years, and
 &lt;a href="http://cs231n.github.io/convolutional-networks/"&gt;Convolutional Neural Networks&lt;/a&gt; have demonstrated
 some very impressive results in image and speech processing.  There
 are some great opportunities to apply them to healthcare, but there

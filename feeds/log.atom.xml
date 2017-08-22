@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Noel Burton-Krahn - log</title><link href="http://burton-krahn.com/" rel="alternate"></link><link href="http://burton-krahn.com/feeds/log.atom.xml" rel="self"></link><id>http://burton-krahn.com/</id><updated>2017-07-26T00:00:00-07:00</updated><entry><title>Data Science Meetup: Delirium Detection With CNNs</title><link href="http://burton-krahn.com/data-science-meetup-delirium-detection-with-cnns.html" rel="alternate"></link><published>2017-07-26T00:00:00-07:00</published><updated>2017-07-26T00:00:00-07:00</updated><author><name>Noel Burton-Krahn</name></author><id>tag:burton-krahn.com,2017-07-26:/data-science-meetup-delirium-detection-with-cnns.html</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Noel Burton-Krahn&lt;/p&gt;
+&lt;h1&gt;Delirium Detection in EEGs&lt;/h1&gt;
+&lt;p&gt;Got baseStudyEDF: control and delerium EEGs
+Total Control: 27
+Total Delirium: 25&lt;/p&gt;
+&lt;p&gt;&lt;img alt="baseStudyEDF" src="{filename}../static/2017-04-26/baseStudyEDF.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Neural Networks&lt;/h1&gt;
+&lt;p&gt;Images from &lt;a href="http://cs231n.github.io/convolutional-networks/"&gt;CS231n Convolutional Neural Networks for Visual Recognition&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="neural_net2" src="{filename}../static/20170727/neural_net2.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cnn" src="{filename}../static/20170727/cnn.jpeg"&gt;&lt;/p&gt;
+&lt;h2&gt;Convolutional Networks&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="convnet" src="{filename}../static/20170727/convnet.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="weights" src="{filename}../static/20170727/weights.jpeg"&gt;&lt;/p&gt;
+&lt;h2&gt;Deep Neural Networks&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="AlexNet" src="{filename}../static/20170727/Figure-27-CNN-Architecture-from-AlexNet-32.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="inception" src="{filename}../static/20170727/inception.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Demo Digit Classifier&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://scs.ryerson.ca/~aharley/vis/conv/flat.html"&gt;2D Visualization of a CNN&lt;/a&gt; by A Harley, Ryerson&lt;/p&gt;
+&lt;p&gt;https://vimeo.com …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Noel Burton-Krahn&lt;/p&gt;
+&lt;h1&gt;Delirium Detection in EEGs&lt;/h1&gt;
+&lt;p&gt;Got baseStudyEDF: control and delerium EEGs
+Total Control: 27
+Total Delirium: 25&lt;/p&gt;
+&lt;p&gt;&lt;img alt="baseStudyEDF" src="{filename}../static/2017-04-26/baseStudyEDF.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Neural Networks&lt;/h1&gt;
+&lt;p&gt;Images from &lt;a href="http://cs231n.github.io/convolutional-networks/"&gt;CS231n Convolutional Neural Networks for Visual Recognition&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="neural_net2" src="{filename}../static/20170727/neural_net2.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cnn" src="{filename}../static/20170727/cnn.jpeg"&gt;&lt;/p&gt;
+&lt;h2&gt;Convolutional Networks&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="convnet" src="{filename}../static/20170727/convnet.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="weights" src="{filename}../static/20170727/weights.jpeg"&gt;&lt;/p&gt;
+&lt;h2&gt;Deep Neural Networks&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="AlexNet" src="{filename}../static/20170727/Figure-27-CNN-Architecture-from-AlexNet-32.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="inception" src="{filename}../static/20170727/inception.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Demo Digit Classifier&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://scs.ryerson.ca/~aharley/vis/conv/flat.html"&gt;2D Visualization of a CNN&lt;/a&gt; by A Harley, Ryerson&lt;/p&gt;
+&lt;p&gt;https://vimeo.com/125940125&lt;/p&gt;
+&lt;h1&gt;A CNN for Delirium Detection&lt;/h1&gt;
+&lt;p&gt;Made 4&lt;em&gt;CONV + 2&lt;/em&gt;FC CNN: avg*2, 64x8, 32x8, 16x8, 8x4, 64, 64, 1&lt;/p&gt;
+&lt;p&gt;in Python's Keras&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    Input(inputs.shape[1:])
+    AveragePooling1D(pool_size=2)
+    Conv1D(64, 8, activation=&amp;#39;relu&amp;#39;)
+    MaxPooling1D()
+    Conv1D(32, 8, activation=&amp;#39;relu&amp;#39;)
+    MaxPooling1D()
+    Conv1D(16, 8, activation=&amp;#39;relu&amp;#39;)
+    MaxPooling1D()
+    Conv1D(2, 8, activation=&amp;#39;relu&amp;#39;)
+    MaxPooling1D(8)
+    Flatten()
+    Dense(64, activation=&amp;#39;sigmoid&amp;#39;,
+          kernel_regularizer=regularizers.l2(0.01),
+          activity_regularizer=regularizers.l1(0.01),
+          )
+    Dense(64, activation=&amp;#39;sigmoid&amp;#39;)
+    Dense(1, activation=&amp;#39;sigmoid&amp;#39;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="baseStudyEDF" src="{filename}../static/2017-04-26/model.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Training&lt;/h2&gt;
+&lt;p&gt;Trained on 3 splits: train on 66% of data, evaluate on 33% untrained
+data.  Average accuracy: (94 + 100 + 82)/3 = 92%&lt;/p&gt;
+&lt;p&gt;&lt;img alt="baseStudyEDF" src="{filename}../static/2017-04-26/split0.png"&gt;
+&lt;img alt="baseStudyEDF" src="{filename}../static/2017-04-26/split1.png"&gt;
+&lt;img alt="baseStudyEDF" src="{filename}../static/2017-04-26/split2.png"&gt;&lt;/p&gt;
+&lt;p&gt;The training graphs demonstrate:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;92% accuracy on untrained validation data is pretty good&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The training dataset is too small.  When the training accuracy goes
+  to 100%, the net is overfitted to the data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="split0.gif" src="{filename}../static/2017-04-27/model-split0.gif"&gt;
+&lt;img alt="split1.gif" src="{filename}../static/2017-04-27/model-split1.gif"&gt;
+&lt;img alt="split2.gif" src="{filename}../static/2017-04-27/model-split2.gif"&gt;&lt;/p&gt;
+&lt;h1&gt;CNNs are easily Fooled&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://blog.openai.com/adversarial-example-research/"&gt;Attacking Machine Learning with Adversarial Examples&lt;/a&gt;
+&lt;img alt="blackbox" src="{filename}../static/20170727/adversarial_img_1.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://anhnguyen.me/project/fooling/"&gt;Deep Neural Network are Easily Fooled: High Confidence Predictions for Unrecognizable Images&lt;/a&gt;
+&lt;img alt="blackbox" src="{filename}../static/20170727/diversity_40_images_label.png"&gt;&lt;/p&gt;
+&lt;h2&gt;The Black Box Problem&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="blackbox" src="{filename}../static/20170727/blackbox.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Medical device approval requires justification.&lt;/p&gt;
+&lt;h2&gt;FDA Approval is Possible&lt;/h2&gt;
+&lt;p&gt;Despite the challenges, devices based on neural networks have recently
+been granted FDA approval, and there are many startups emerging in
+this space.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.prnewswire.com/news-releases/arterys-receives-fda-clearance-for-the-first-zero-footprint-medical-imaging-analytics-cloud-software-with-deep-learning-for-cardiac-mri-300387880.html"&gt;Arterys Receives FDA Clearance For The First Zero-Footprint Medical Imaging Analytics Cloud Software With Deep Learning For Cardiac MRI&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.fiercebiotech.com/medical-devices/arterys-nabs-second-fda-ok-for-deep-learning-image-analysis-software"&gt;Arterys nabs second FDA OK for deep learning, image analysis software&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.google.ca/amp/www.nanalyze.com/2017/02/artificial-intelligence-medical-imaging/amp/"&gt;9 Artificial Intelligence Startups in Medical Imaging&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;CNN Analysis&lt;/h1&gt;
+&lt;p&gt;Did deeper analysis of the CNN convolution filters.  Convolution
+filters are similar to wavelets in that they perform a multiscale
+correlation of the input signal with learned feature fragments.  Lower
+layers convolve with the outputs of upper layers to match larger scale
+features.&lt;/p&gt;
+&lt;p&gt;These graphs show the input feature that maximizes neuron excitment
+for each convolution filtter at each level.&lt;/p&gt;
+&lt;p&gt;The final correlation layer's output is passed through a
+fully-connected network for final classification.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="baseStudyEDF" src="{filename}../static/2017-04-26/model-split0-epoch28-val_acc0.94.hdf5-layer1.png"&gt;
+&lt;img alt="baseStudyEDF" src="{filename}../static/2017-04-26/model-split0-epoch28-val_acc0.94.hdf5-layer4.png"&gt;
+&lt;img alt="baseStudyEDF" src="{filename}../static/2017-04-26/model-split0-epoch28-val_acc0.94.hdf5-layer7.png"&gt;
+&lt;img alt="baseStudyEDF" src="{filename}../static/2017-04-26/model-split0-epoch28-val_acc0.94.hdf5-layer10.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Other ways of looking at EEGS&lt;/h1&gt;
+&lt;h2&gt;Frequency spectrogram&lt;/h2&gt;
+&lt;p&gt;Spectrograms of 8 delirium and 8 control EEGs&lt;/p&gt;
+&lt;p&gt;&lt;img alt="eeg-spectrogram.png" src="{filename}../static/20170505/eeg-spectrogram.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Wavelet transform&lt;/h2&gt;
+&lt;p&gt;Problem: The DWT is shift-variant&lt;/p&gt;
+&lt;p&gt;Solution?  The &lt;a href="http://people.math.sc.edu/blanco/imi/dtcwt0.pdf"&gt;The Dual-Tree Complex Wavelet Transform&lt;/a&gt; is shift-invariant&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://pypi.python.org/pypi/dtcwt/"&gt;Python dtcwt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here's the DTCWT vs the DWT for a control EEG&lt;/p&gt;
+&lt;p&gt;&lt;img alt="dtcwt-dwt-control1.png" src="{filename}../static/2017-05-02/dtcwt-dwt-control1.png"&gt;&lt;/p&gt;
+&lt;p&gt;And the DTCWT for a control vs delirium EEG&lt;/p&gt;
+&lt;p&gt;&lt;img alt="dtcwt1-control-delirum.png" src="{filename}../static/2017-05-02/dtcwt1-control-delirum.png"&gt;&lt;/p&gt;
+&lt;p&gt;Examining 8sec DWT samples grouped by patient, ordered by validate_acc
+during training.  Each 8sec dwt block was used as a validation point
+in 3 keras training runs, and sorted by average accuracy.  The results
+were tabulated in a Jupyter notebook which could overlay blocks
+interacively for visual comparison.&lt;/p&gt;
+&lt;p&gt;The most consistently accurate delirium blocks appeared to have high
+frequency oscillations around coeffs 90-128.  Also sometimes high
+amplitudes in the 1-64 coeff range.&lt;/p&gt;
+&lt;p&gt;The most consistently accurate control blocks has low frequency
+oscillations around coeffs 90-128, and low amplitudes overall.&lt;/p&gt;
+&lt;p&gt;There were exceptions to these rules that were nevertheless
+consistently accurate.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="jupyter_validate_acc" src="{filename}/static/20170515/jupyter_validate_acc.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Continuous wavelet transform of 8sec delirium eeg&lt;/h2&gt;
+&lt;p&gt;From noel/classifiers/CWTTest.ipynb&lt;/p&gt;
+&lt;p&gt;&lt;img alt="dwt-cwt" src="{filename}/static/20170519/20170519-cwt.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Trying CNN on Wavelet transform&lt;/h2&gt;
+&lt;p&gt;Goal: to find a wavelet basis that isolates the delirium features.&lt;/p&gt;
+&lt;p&gt;Found: dtcwt scales 6-8, (8Hz, 4Hz, 2Hz, 896 points per sample, from
+32k), fc16, fc16 nnet: 98.1%&lt;/p&gt;
+&lt;video width="720" height="240" controls&gt;
+  &lt;source src="../../static/2017-05-03/eeg-ddtcwt-nnet-coeffs4-5-fc16.mp4" type="video/mp4"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;h1&gt;Conclusions&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Deep networks can produce high accuracy&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;But they can be fooled, and the error resonse is unknown&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;They need to be fully explained to satisfy regulatory requirements&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Future Work&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Maybe a CNN with smaller FC layers would be easier:  just convolutions, no fully-connected layers?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Try in wavelet domain to reduce convolutional layers&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Try genetic algorithm for optimizing layers&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="log"></category><category term="eeg"></category><category term="cnn"></category><category term="nnet"></category></entry></feed>
